@@ -59,3 +59,10 @@
   - 모든 요약 페이지의 wikilink 경로 업데이트
   - index.md를 카테고리별 구조로 재구성
   - log.md에 재구성 기록 추가
+
+### [09:20:00] create | Created concept page: ide-shortcut-common-patterns
+- **타입**: Concept Page
+- **위치**: content/concepts/ide-shortcut-common-patterns.md
+- **내용**: 이클립스와 VSCode 단축키 공통 패턴 분석 (선택 확장, 수정자 조합, 탐색 패턴)
+- **소스**: content/sources/eclipse-shortcuts.md, content/sources/vscode-shortcuts.md
+- **업데이트**: index.md에 컨셉 카테고리 및 페이지 추가

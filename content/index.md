@@ -14,6 +14,9 @@
 - [[ide/vscode-shortcuts]] — VSCode에서 태그 선택 및 코드 정렬 단축키 (더블 클릭, Shift+Alt+F)
 - [[ide/eclipse-tag-selection-shortcut]] — 이클립스에서 여는태그와 닫는태그를 한번에 선택하는 단축키 (Alt+Shift+A)
 
+## 컨셉 (Concepts)
+- [[concepts/ide-shortcut-common-patterns]] — IDE 단축키 공통 패턴 (선택 확장, 수정자 조합, 탐색)
+
 ## 프론트엔드 (Frontend)
 (예정: HTML, CSS, JavaScript 등)
 
