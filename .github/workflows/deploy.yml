@@ -1,0 +1,45 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          repository: keehyun2/keehyun2.github.io
+          path: target
+          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+
+      - name: Clear target directory
+        run: |
+          cd target
+          rm -rf * .* 2>/dev/null || true
+          cd ..
+
+      - name: Copy public directory
+        run: |
+          cp -r source/public/* target/
+
+      - name: Commit and push
+        run: |
+          cd target
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --quiet || git commit -m "Deploy from dev-wiki"
+          git push
