@@ -20,12 +20,8 @@ jobs:
           path: source
 
       - name: Checkout target repository
-        uses: actions/checkout@v4
-        with:
-          repository: keehyun2/keehyun2.github.io
-          path: target
-          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
-          persist-credentials: true
+        run: |
+          git clone --depth 1 https://${{ secrets.GH_PAGES_DEPLOY_TOKEN }}@github.com/keehyun2/keehyun2.github.io.git target
 
       - name: Clear target directory
         run: |
@@ -44,4 +40,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git diff --quiet || git commit -m "Deploy from dev-wiki"
-          git push
+          git push https://${{ secrets.GH_PAGES_DEPLOY_TOKEN }}@github.com/keehyun2/keehyun2.github.io.git master
