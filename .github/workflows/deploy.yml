@@ -5,39 +5,18 @@ on:
     branches:
       - master
 
-permissions:
-  contents: read
-  secrets: read
-
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Checkout source repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v2
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: source
-
-      - name: Checkout target repository
-        run: |
-          git clone --depth 1 https://${{ secrets.GH_PAGES_DEPLOY_TOKEN }}@github.com/keehyun2/keehyun2.github.io.git target
-
-      - name: Clear target directory
-        run: |
-          cd target
-          rm -rf * .* 2>/dev/null || true
-          cd ..
-
-      - name: Copy public directory
-        run: |
-          cp -r source/public/* target/
-
-      - name: Commit and push
-        run: |
-          cd target
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --quiet || git commit -m "Deploy from dev-wiki"
-          git push https://${{ secrets.GH_PAGES_DEPLOY_TOKEN }}@github.com/keehyun2/keehyun2.github.io.git master
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          external_repository: keehyun2/keehyun2.github.io
+          publish_branch: master
+          publish_dir: ./public
