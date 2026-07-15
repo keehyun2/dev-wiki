@@ -66,3 +66,13 @@
 - **내용**: 이클립스와 VSCode 단축키 공통 패턴 분석 (선택 확장, 수정자 조합, 탐색 패턴)
 - **소스**: content/sources/eclipse-shortcuts.md, content/sources/vscode-shortcuts.md
 - **업데이트**: index.md에 컨셉 카테고리 및 페이지 추가
+
+## 2026-07-15
+
+### [12:30:00] create | Created summary page: java-nio-file-operations
+- **타입**: Summary Page (한국어)
+- **위치**: content/summaries/java-nio-file-operations.md
+- **내용**: Java NIO 파일 작업 가이드 (Path, Files API, 읽기/쓰기, 디렉토리 순회, Java 버전 차이)
+- **소스**: content/sources/java-nio-file-operations.md
+- **작업**: 원본 문서를 sources/로 이동하고 한국어 요약본 생성
+- **업데이트**: index.md에 Java 카테고리 및 페이지 추가

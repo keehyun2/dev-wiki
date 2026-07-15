@@ -10,6 +10,9 @@
 ## 데이터베이스 (Database)
 - [[database/oracle-sql]] — Oracle SQL 필수 문법 (MERGE, WITH, 분석 함수, 날짜)
 
+## Java
+- [[summaries/java-nio-file-operations]] — Java NIO 파일 작업 가이드 (Path, Files API, 읽기/쓰기, 디렉토리 순회)
+
 ## IDE 도구 (IDE)
 - [[ide/vscode-shortcuts]] — VSCode에서 태그 선택 및 코드 정렬 단축키 (더블 클릭, Shift+Alt+F)
 - [[ide/eclipse-tag-selection-shortcut]] — 이클립스에서 여는태그와 닫는태그를 한번에 선택하는 단축키 (Alt+Shift+A)
