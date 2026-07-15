@@ -25,6 +25,7 @@ jobs:
           repository: keehyun2/keehyun2.github.io
           path: target
           token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          persist-credentials: true
 
       - name: Clear target directory
         run: |
