@@ -15,6 +15,19 @@ rm -rf              # 강제 삭제
 tree                # 디렉토리 구조 보기
 ```
 
+### 심볼릭 링크 (ln)
+
+```bash
+ln -s /path/to/original /path/to/link      # 심볼릭 링크 생성
+ln -s /absolute/path ./relative-link      # 상대 경로로 링크 생성
+ln -sf /new/target existing-link          # 기존 링크 강제 업데이트
+ln -s /path/to/original .                  # 현재 디렉토리에 링크 생성
+```
+
+**심볼릭 링크 vs 하드링크:**
+- 심볼릭 링크 (`ln -s`): 원본 파일을 가리키는 포인터, 원본 삭제시 링크는 깨짐
+- 하드링크 (`ln`): 원본과 동일한 데이터를 가리킴, 원본 삭제해도 데이터 유지
+
 ### find 명령어
 
 ```bash
