@@ -19,6 +19,12 @@
 
 ## 컨셉 (Concepts)
 - [[concepts/ide-shortcut-common-patterns]] — IDE 단축키 공통 패턴 (선택 확장, 수정자 조합, 탐색)
+- [[concepts/windows-cmd-commands]] — Windows CMD 필수 명령어 (파일, 시스템, 네트워크, 배치 파일)
+- [[concepts/powershell-commands]] — PowerShell 필수 명령어 (파일, 프로세스, 파이프라인, 변수)
+- [[concepts/nfs-samba-server]] — NFS 및 Samba 서버 설정 (설치, 공유 설정, 클라이언트 연결, 트러블슈팅)
+- [[concepts/java-8-stream-map]] — Java 8 Stream map 사용법 (변환, flatMap, 일반 패턴)
+- [[concepts/oracle-19c-time-format]] — Oracle 19c 시간 포맷팅 (HHMISS, 시간 추출, 변환)
+- [[concepts/java-ehcache]] — Java Ehcache 가이드 (기본 사용, 리소스 풀, 만료 정책, 캐싱 전략)
 
 ## 프론트엔드 (Frontend)
 (예정: HTML, CSS, JavaScript 등)

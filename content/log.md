@@ -76,3 +76,28 @@
 - **소스**: content/sources/java-nio-file-operations.md
 - **작업**: 원본 문서를 sources/로 이동하고 한국어 요약본 생성
 - **업데이트**: index.md에 Java 카테고리 및 페이지 추가
+
+## 2026-08-04
+
+### [09:15:00] create | Created concept pages from momo.md topics
+- **타입**: Concept Pages (Quick Reference/Cheatsheets)
+- **생성 파일**:
+  - content/concepts/windows-cmd-commands.md (Windows CMD 필수 명령어)
+  - content/concepts/powershell-commands.md (PowerShell 필수 명령어)
+  - content/concepts/nfs-samba-server.md (NFS 및 Samba 서버 설정)
+  - content/concepts/java-8-stream-map.md (Java 8 Stream map 사용법)
+  - content/concepts/oracle-19c-time-format.md (Oracle 19c 시간 포맷팅)
+  - content/concepts/java-ehcache.md (Java Ehcache 가이드)
+- **내용**: 개발 관련 주제들에 대한 빠른 참조용 페이지 생성 (명령어, 설정, 문법)
+- **업데이트**: index.md에 Concepts 섹션에 6개 페이지 추가
+
+### [09:45:00] simplify | Simplified concept pages for better readability
+- **작업**: 6개 컨셉 페이지를 간결하게 재작성 (정의, 쓰임새, 간단한 예시 중심)
+- **수정 파일**:
+  - content/concepts/windows-cmd-commands.md (주요 명령어 + 유용한 패턴)
+  - content/concepts/powershell-commands.md (핵심 Cmdlets + 파이프라인)
+  - content/concepts/nfs-samba-server.md (정의 + 선택 가이드 + 기본 명령어)
+  - content/concepts/java-8-stream-map.md (기본 사용법 + 실전 패턴)
+  - content/concepts/oracle-19c-time-format.md (기본 포맷 + 실전 패턴)
+  - content/concepts/java-ehcache.md (기본 사용법 + 설정 가이드라인)
+- **변경사항**: 장황한 내용 제거, 핵심 개념과 예시 중심, 한글과 영어 적절히 혼합
