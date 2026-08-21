@@ -25,6 +25,7 @@
 - [[concepts/java-8-stream-map]] — Java 8 Stream map 사용법 (변환, flatMap, 일반 패턴)
 - [[concepts/oracle-19c-time-format]] — Oracle 19c 시간 포맷팅 (HHMISS, 시간 추출, 변환)
 - [[concepts/java-ehcache]] — Java Ehcache 가이드 (기본 사용, 리소스 풀, 만료 정책, 캐싱 전략)
+- [[concepts/eclipse-plugin-development]] — 이클립스 플러그인 개발 기초 (OSGi 번들, 확장 포인트, PDE, 배포)
 
 ## 프론트엔드 (Frontend)
 (예정: HTML, CSS, JavaScript 등)

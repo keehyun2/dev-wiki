@@ -101,3 +101,11 @@
   - content/concepts/oracle-19c-time-format.md (기본 포맷 + 실전 패턴)
   - content/concepts/java-ehcache.md (기본 사용법 + 설정 가이드라인)
 - **변경사항**: 장황한 내용 제거, 핵심 개념과 예시 중심, 한글과 영어 적절히 혼합
+
+## 2026-08-21
+
+### [10:00:00] create | Created concept page: eclipse-plugin-development
+- **타입**: Concept Page
+- **위치**: content/concepts/eclipse-plugin-development.md
+- **내용**: 이클립스 플러그인 개발 기초 (OSGi 번들 구조, Extension Point, PDE/Target Platform, 주요 확장 포인트, View/Handler 예제, 3.x vs e4, 실행/디버깅, 배포)
+- **업데이트**: index.md Concepts 섹션에 페이지 추가
