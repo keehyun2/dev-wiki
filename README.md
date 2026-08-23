@@ -38,9 +38,9 @@ my-ai-wiki/
 │   └── sources/       # 원본 문서 (.json, .md)
 ├── quartz/            # Quartz 소스 코드
 ├── public/            # 빌드 결과물 (git 제외)
+├── .github/workflows/ # GitHub Actions 배포 워크플로우
 ├── package.json       # 프로젝트 설정
-├── quartz.config.ts   # Quartz 설정
-└── netlify.toml       # Netlify 배포 설정
+└── quartz.config.ts   # Quartz 설정
 ```
 
 ## 컨텐츠 추가
@@ -53,18 +53,12 @@ my-ai-wiki/
 
 ## 배포
 
-### Netlify
+### GitHub Pages
 
-이 프로젝트는 Netlify에 자동 배포됩니다. GitHub에 push하면:
+이 프로젝트는 GitHub Pages(https://keehyun2.github.io)에 자동 배포됩니다. GitHub에 push하면:
 
-1. Netlify가 `npm run build` 실행
-2. `public/` 폴더 배포
-
-### 수동 배포
-
-```bash
-npx netlify deploy --prod --dir=public
-```
+1. GitHub Actions가 `npm run build` 실행
+2. `public/` 폴더를 `keehyun2/keehyun2.github.io` 저장소에 배포
 
 ## 커밋 메시지 규칙
 
