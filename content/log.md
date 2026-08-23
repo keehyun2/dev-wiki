@@ -109,3 +109,27 @@
 - **위치**: content/concepts/eclipse-plugin-development.md
 - **내용**: 이클립스 플러그인 개발 기초 (OSGi 번들 구조, Extension Point, PDE/Target Platform, 주요 확장 포인트, View/Handler 예제, 3.x vs e4, 실행/디버깅, 배포)
 - **업데이트**: index.md Concepts 섹션에 페이지 추가
+
+## 2026-08-23
+
+### [11:50:00] ingest | Google Keep 마크다운 백업에서 유용한 문서 15개 위키로 이관
+- **소스**: ~/Downloads/markdown-20260823T001406Z-1-001/markdown (2017~2019년 학습 노트)
+- **선별 기준**: 미완성(작성중/빈 파일) 제외, 오래된 기술(bower, AngularJS, bintray/jCenter, Selenium 3+IE, Rinkeby) 제외, 민감 정보 포함 문서(사내 시스템, 계정/비밀번호) 제외
+- **생성 파일**:
+  - content/concepts/sorting-algorithms.md (기본정렬알고리즘 — typo 수정: 기수 정열→정렬, Buket→Bucket)
+  - content/concepts/binary-tree.md (Binary Tree)
+  - content/concepts/binary-search-tree.md (Binary Search Tree)
+  - content/concepts/heap-priority-queue.md (Heap, Priority Queue)
+  - content/concepts/linked-list-stack-queue.md (Linked List)
+  - content/concepts/bitmask.md (BitMask)
+  - content/concepts/algorithm-coding-mistakes.md (알고리즘 문제 해결 전략 정리)
+  - content/concepts/gcd-lcm-euclidean.md (gcd/lcm 유클리드 호제법 — 헤딩 구조 조정)
+  - content/concepts/coding-test-language-basics.md (입출력 + 반복문/조건문 두 문서를 언어별 비교 형태로 통합)
+  - content/concepts/docker-usage.md (Docker 사용법 — boot2docker/docker toolbox 오래된 섹션 제거, 작성 시점 주석 추가)
+  - content/concepts/redis-java-client.md (Redis — 사내 관련 문구·URL 제거, khphub.com→127.0.0.1, Windows 설치 안내 WSL2 기준으로 수정)
+  - content/concepts/java-json-parsing.md (Json Data Parse in java)
+  - content/concepts/totp-google-otp.md (PHP Google OTP — 제목 일반화, 원리 언어 무관 주석 추가)
+  - content/concepts/windows-dev-tips.md (Windows Vista 유용한 기능 — 기존 windows-cmd/powershell 페이지와 중복 없는 부분만)
+  - content/summaries/database/mysql-query-log.md (Mysql Query log — DB명 일반화)
+- **공통 작업**: 각 페이지 말미에 [[wikilink]] 관련 페이지 섹션 추가
+- **업데이트**: index.md에 '알고리즘 · 자료구조' 카테고리 신설(9페이지), 데이터베이스·컨셉 섹션에 6페이지 추가
