@@ -1,3 +1,7 @@
+---
+title: Java JSON 파싱
+---
+
 # Json Data Parse in java(Client) 
 
 gson java library 를 활용하여 json 데이터를 읽어와서 활용하고 했는데, spring 에 **RestTemplate** 을 사용하여도 될것 같습니다. 

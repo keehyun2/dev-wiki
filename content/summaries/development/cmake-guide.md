@@ -1,3 +1,7 @@
+---
+title: CMake 빌드 가이드
+---
+
 # CMake 빌드 가이드
 
 ## 기본 빌드
@@ -86,4 +90,4 @@ cmake --build build -j4
 ## 관련 페이지
 
 - [[sources/developers-cheatsheet.md]] - 전체 개발자 치트시트
-- [[development/linux-commands.md]] - Linux 명령어
+- [[summaries/development/linux-commands.md]] - Linux 명령어

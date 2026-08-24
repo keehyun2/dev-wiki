@@ -1,3 +1,7 @@
+---
+title: Docker 필수 명령어
+---
+
 # Docker 필수 명령어
 
 ## 기본 명령어
@@ -62,4 +66,4 @@ docker run --network mynet app
 ## 관련 페이지
 
 - [[sources/developers-cheatsheet.md]] - 전체 개발자 치트시트
-- [[development/linux-commands.md]] - Linux 명령어
+- [[summaries/development/linux-commands.md]] - Linux 명령어

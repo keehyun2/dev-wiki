@@ -1,3 +1,7 @@
+---
+title: Docker 사용법
+---
+
 # Docker 사용법
 linux에서 container 간 격리 하여 가상화 비슷한 환경을 구성한 도구를 Docker 라고 합니다. https://hub.docker.com/ 에서 repository 들을 찾아볼 수 있습니다.
 
@@ -107,5 +111,5 @@ linux에서 container 간 격리 하여 가상화 비슷한 환경을 구성한 
 
 
 ## 관련 페이지
-- [[development/docker-commands]] — Docker 필수 명령어 치트시트
+- [[summaries/development/docker-commands]] — Docker 필수 명령어 치트시트
 - [[linux-commands]] — Linux 명령어

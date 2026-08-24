@@ -1,3 +1,7 @@
+---
+title: Windows 개발 팁
+---
+
 # Windows 개발 팁 (tail, 심볼릭 링크, 배치)
 
 Windows에서 Linux 스타일 작업을 해야 할 때 유용한 기능들입니다.

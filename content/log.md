@@ -133,3 +133,16 @@
   - content/summaries/database/mysql-query-log.md (Mysql Query log — DB명 일반화)
 - **공통 작업**: 각 페이지 말미에 [[wikilink]] 관련 페이지 섹션 추가
 - **업데이트**: index.md에 '알고리즘 · 자료구조' 카테고리 신설(9페이지), 데이터베이스·컨셉 섹션에 6페이지 추가
+
+### [12:30:00] restructure | concepts/ 폴더 주제별 분할 + 전체 페이지 한글 제목 부여
+- **폴더 분할**: content/concepts/ 하위 22개 파일을 7개 주제 폴더로 이동 (git mv)
+  - algorithm/ (9): sorting-algorithms, binary-tree, binary-search-tree, heap-priority-queue, linked-list-stack-queue, bitmask, gcd-lcm-euclidean, algorithm-coding-mistakes, coding-test-language-basics
+  - java/ (4): java-8-stream-map, java-ehcache, java-json-parsing, redis-java-client
+  - database/ (1): oracle-19c-time-format
+  - windows/ (3): windows-cmd-commands, powershell-commands, windows-dev-tips
+  - devops/ (2): docker-usage, nfs-samba-server
+  - ide/ (2): eclipse-plugin-development, ide-shortcut-common-patterns
+  - security/ (1): totp-google-otp
+- **한글 제목**: 빌드되는 모든 페이지(38개)에 `title` frontmatter 추가 — 탐색기/검색/브라우저 탭에 한글 표시, 폴더명·파일명은 영문 kebab-case 유지
+- **링크 정리**: index.md 카탈로그를 새 폴더 구조에 맞게 재구성(Windows·DevOps·보안 섹션 신설), eclipse-plugin-development.md 내 wikilink 경로 수정
+- **가이드라인**: AGENTS.md·CLAUDE.md·wiki-page-creator 스킬의 프론트매터 규칙을 "한글 title 허용"으로 업데이트

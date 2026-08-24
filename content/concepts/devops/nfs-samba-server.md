@@ -1,3 +1,7 @@
+---
+title: NFS 및 Samba 서버 설정
+---
+
 # NFS 및 Samba 서버
 
 **NFS**는 Linux/Unix 시스템 간 파일 공유를 위한 프로토콜이고, **Samba**는 Linux와 Windows 간 파일 공유를 위한 SMB/CIFS 프로토콜 구현입니다.

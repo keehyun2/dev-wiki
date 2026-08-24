@@ -59,7 +59,7 @@ Ask the user or infer from context:
 ## Format Guidelines
 
 - **Wikilinks**: Use `[[path/to/page]]` to link other wiki pages
-- **No YAML frontmatter**: Don't add `---` frontmatter to generated content
+- **Title frontmatter**: Prepend `---\ntitle: <한글 제목>\n---` (Korean display title; filenames stay English kebab-case). Don't add any other frontmatter fields
 - **Heading hierarchy**: Use standard markdown (`#`, `##`, `###`)
 - **Focus**: Keep each page on a single topic
 - **Brevity**: One-liner summaries in index.md, detailed content in pages

@@ -1,3 +1,7 @@
+---
+title: MySQL 쿼리 로그 설정 및 관리
+---
+
 # MySQL Query Log 설정 및 관리
 
 ## General Query Log 설정

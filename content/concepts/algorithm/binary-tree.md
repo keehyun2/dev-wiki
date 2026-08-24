@@ -1,3 +1,7 @@
+---
+title: 트리와 이진 트리
+---
+
 # Tree(트리)와 Binary Tree(이진 트리)
 
 ## Tree(트리)

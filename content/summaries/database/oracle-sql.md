@@ -1,3 +1,7 @@
+---
+title: Oracle SQL 필수 문법
+---
+
 # Oracle SQL 필수 문법
 
 ## DDL (데이터 정의)

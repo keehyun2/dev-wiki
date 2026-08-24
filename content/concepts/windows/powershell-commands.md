@@ -1,3 +1,7 @@
+---
+title: PowerShell 명령어
+---
+
 # PowerShell 명령어
 
 **PowerShell**은 윈도우용 강력한 명령줄 셸과 스크립팅 언어로, 객체 파이프라인과 .NET 통합이 특징입니다.

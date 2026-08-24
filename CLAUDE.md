@@ -61,7 +61,7 @@ content/
 - Quartz automatically resolves these to proper HTML paths
 
 ### Content Guidelines
-- **No YAML frontmatter** in generated content (managed by code)
+- **Korean `title` frontmatter** on every page (display name for explorer/search; folder & file names stay English kebab-case). No other YAML frontmatter (managed by code)
 - Standard markdown heading hierarchy
 - Keep each page focused on a single topic
 - Update `index.md` when adding new pages (one-line entry)

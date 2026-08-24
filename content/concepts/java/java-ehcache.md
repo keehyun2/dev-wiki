@@ -1,3 +1,7 @@
+---
+title: Java Ehcache 가이드
+---
+
 # Java Ehcache 가이드
 
 **Ehcache**는 Java 애플리케이션을 위한 강력한 캐싱 솔루션으로, 메모리, 디스크, 분산 캐싱을 지원합니다.

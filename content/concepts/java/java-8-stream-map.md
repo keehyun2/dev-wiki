@@ -1,3 +1,7 @@
+---
+title: Java 8 Stream map 사용법
+---
+
 # Java 8 Stream map 사용법
 
 **Stream map()**은 Java 8에서 컬렉션 요소를 변환하는 핵심 메서드로, 함수형 프로그래밍 스타일의 데이터 처리를 제공합니다.

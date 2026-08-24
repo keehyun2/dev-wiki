@@ -1,3 +1,7 @@
+---
+title: Java 실행 및 디버깅
+---
+
 # Java 실행 및 디버깅
 
 ## 환경 확인
@@ -98,5 +102,5 @@ java -XX:MaxMetaspaceSize=512m -jar app.jar
 ## 관련 페이지
 
 - [[sources/developers-cheatsheet.md]] - 전체 개발자 치트시트
-- [[development/linux-commands.md]] - Linux 명령어
-- [[development/docker-commands.md]] - Docker 명령어
+- [[summaries/development/linux-commands.md]] - Linux 명령어
+- [[summaries/development/docker-commands.md]] - Docker 명령어

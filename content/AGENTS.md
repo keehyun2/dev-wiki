@@ -32,4 +32,5 @@ Operations: ingest, query, lint
 - Use [[wikilink]] to link other wiki pages (e.g., [[concepts/attention]])
 - Standard Markdown heading hierarchy
 - Keep each page focused on a single topic
-- Do not include YAML frontmatter (---) in generated content; it is managed by code
+- Every page starts with a `title` frontmatter holding the Korean display title (shown in the explorer, search, and browser tab). File and folder names themselves stay English kebab-case
+- Do not add other YAML frontmatter fields to generated content; they are managed by code

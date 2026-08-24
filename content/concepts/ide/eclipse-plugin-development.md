@@ -1,3 +1,7 @@
+---
+title: 이클립스 플러그인 개발 기초
+---
+
 # 이클립스 플러그인 개발 기초
 
 **이클립스 플러그인(Plug-in)**은 이클립스 IDE와 RCP 애플리케이션의 기능 확장 단위로, OSGi 번들 형태의 JAR입니다. 이클립스 자체도 수백 개의 플러그인 조합으로 구성되어 있습니다.
@@ -174,5 +178,5 @@ OSGi 콘솔        ss, bundles   — 설치/시작 상태 확인 (Console 뷰에
 
 ## 관련 페이지
 - [[summaries/ide/eclipse-shortcut]] — 이클립스 단축키
-- [[concepts/ide-shortcut-common-patterns]] — IDE 단축키 공통 패턴
+- [[concepts/ide/ide-shortcut-common-patterns]] — IDE 단축키 공통 패턴
 - [[summaries/development/java-debugging]] — Java 실행 및 디버깅

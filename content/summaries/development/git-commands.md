@@ -1,3 +1,7 @@
+---
+title: Git 필수 명령어
+---
+
 # Git 필수 명령어
 
 ## 상태 확인
@@ -76,4 +80,4 @@ git push origin feature   # 원격에 푸시
 ## 관련 페이지
 
 - [[sources/developers-cheatsheet.md]] - 전체 개발자 치트시트
-- [[development/linux-commands.md]] - Linux 명령어
+- [[summaries/development/linux-commands.md]] - Linux 명령어

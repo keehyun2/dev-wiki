@@ -1,3 +1,7 @@
+---
+title: VSCode 태그 선택·코드 정렬 단축키
+---
+
 # VSCode 태그 선택 및 코드 정렬 단축키
 
 ## 핵심 단축키
@@ -55,4 +59,4 @@ VSCode의 가장 중요한 단축키 중 하나입니다.
 ## 관련 페이지
 
 - [[sources/vscode-shortcuts.md]] - VSCode 전체 단축키 목록
-- [[ide/eclipse-tag-selection-shortcut.md]] - 이클립스 단축키와 비교
+- [[summaries/ide/eclipse-shortcut]] - 이클립스 단축키와 비교

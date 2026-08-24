@@ -1,3 +1,7 @@
+---
+title: Linux 필수 명령어
+---
+
 # Linux 필수 명령어
 
 ## 파일/디렉토리
@@ -108,5 +112,5 @@ cat /etc/os-release     # OS 상세 정보
 ## 관련 페이지
 
 - [[sources/developers-cheatsheet.md]] - 전체 개발자 치트시트
-- [[development/git-commands.md]] - Git 명령어
-- [[development/docker-commands.md]] - Docker 명령어
+- [[summaries/development/git-commands.md]] - Git 명령어
+- [[summaries/development/docker-commands.md]] - Docker 명령어
