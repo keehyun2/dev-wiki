@@ -5,7 +5,7 @@ title: Redis와 Java 클라이언트
 # Redis와 Java 클라이언트
 
 
-> 2018년에 작성된 문서입니다. 클라이언트 라이브러리 버전(jedis 2.9 등)은 참고용이며, 현재는 Lettuce·Redisson 가 주로 사용됩니다.
+> 2018년에 작성된 문서입니다. 클라이언트 라이브러리 버전(jedis 2.9 등)은 참고용이며, 현재는 Lettuce·Redisson 이 주로 사용됩니다.
 ### 들어가기
 
 redis-server 는 오픈소스로 데이터가 메모리에 저장되는 구조로 빠르게 데이터를 가져올 수 있습니다. 또한 map, list등 여러 자료구조를 제공합니다. web 분야에서 session이나 cache 정보를 저장하는 용도로 많이 사용하고, game 분야 에서는 랭킹 리스트(중요하지 않은 정보 빠르게 불러오기 위한 caching 처리) 등에 많이 사용합니다. 
@@ -54,6 +54,7 @@ config.useSingleServer().setAddress("127.0.0.1:6379");
 RedissonClient redisson = Redisson.create(config);
 ```
 더 상세한 설명은 [wiki](https://github.com/redisson/redisson/wiki/Table-of-Content) 를 참고합니다. 
+
 ## 관련 페이지
 - [[java-ehcache]] — Java 캐싱 솔루션 Ehcache
 - [[java-json-parsing]] — Java JSON 파싱

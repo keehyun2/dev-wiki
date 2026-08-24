@@ -14,7 +14,7 @@ linux에서 container 간 격리 하여 가상화 비슷한 환경을 구성한 
 ### Docker 사용법
 1. **이미지 내려받기**
    hub에서 찾으신 image (ubuntu, nginx, tomcat 등) 를 내려받고, 이를 여러 옵션을 사용하여 docker container에 올릴 수 있습니다. Docker hub의 image 상세 화면에서 container로 구동하는 방법 및 옵션에 대해 설명을 해줍니다.
-   아래는 ubuntu image 를 내려받는 명렁어 입니다. 뒤에 version 을 붙혀서 특정 버전을 내려받을 수 있고, 붙이지 않으면 latest 버전을 내려받습니다. 내려받은 이미지들 목록은 docker images 로 확인하고 삭제는 docker rmi 리파지토리명 명령어로 합니다. 만약에 rm repository 를 사용하는 container 가 있으면 삭제가 안되므로 container 삭제 이후 에 image 삭제할 수 있습니다.
+   아래는 ubuntu image 를 내려받는 명령어 입니다. 뒤에 version 을 붙여서 특정 버전을 내려받을 수 있고, 붙이지 않으면 latest 버전을 내려받습니다. 내려받은 이미지들 목록은 docker images 로 확인하고 삭제는 docker rmi 리파지토리명 명령어로 합니다. 만약에 rm repository 를 사용하는 container 가 있으면 삭제가 안되므로 container 삭제 이후 에 image 삭제할 수 있습니다.
 
    ```bash
    $ docker pull ubuntu
@@ -24,7 +24,7 @@ linux에서 container 간 격리 하여 가상화 비슷한 환경을 구성한 
    ```
 
 2. **컨테이너 실행**
-   내려받은 image 를 사용해서 1:n 으로 container 를 여러개 실행할 수 있습니다. docker **run** 또는 docker **exec** 등으로 container 를 생성하면서 실행합니다. docker hub 에서 배포하는 **official image** 나 개인이 hub 에 **push** 한 이미지들을 사용하여 **container** 를 생성합니다. docker run 할때 **기본적인 option** 을 부여하여 container 를 실행할 수 있는데 **image** 마다 사용가능한 option 이 다릅니다. image 를 만들기에 option 값이 다릅니다. Docker Hub 에 repository(image) 상세 설명을 참고하는게 좋습니다.  
+   내려받은 image 를 사용해서 1:n 으로 container 를 여러개 실행할 수 있습니다. **docker run** 으로 container 를 생성하면서 실행합니다. docker hub 에서 배포하는 **official image** 나 개인이 hub 에 **push** 한 이미지들을 사용하여 **container** 를 생성합니다. 이미 실행 중인 container 안에서 명령을 실행할 때는 **docker exec** 를 사용합니다. docker run 할때 **기본적인 option** 을 부여하여 container 를 실행할 수 있는데 **image** 마다 사용가능한 option 이 다릅니다. image 를 만들기에 option 값이 다릅니다. Docker Hub 에 repository(image) 상세 설명을 참고하는게 좋습니다.  
 
    ```shell
    $ docker ps
@@ -33,7 +33,7 @@ linux에서 container 간 격리 하여 가상화 비슷한 환경을 구성한 
    $ docker ps -a
    ```
 
-   위의 명령어는 **plexinc/pms-docker** 라는 image 를 실행하겠다는 의미입니다. **-it** option 은 container 에 터미널로 접근을 허락하는 option 입니다. **--name plex** 는 container 의 이름을 plex 로 지정한다는 뜻입니다. 이미 똑같은 이름이 있는 경우는 container 생성 및 실행이 실패합니다. **-e** 는 환경 변수를 지정하는 옵션입니다. **-v** 옵션으로 호스트 PC 의 폴더과 container 의 폴더을 공유하기 위해 사용하는 옵션입니다. 
+   위의 명령어는 **plexinc/pms-docker** 라는 image 를 실행하겠다는 의미입니다. **-it** option 은 container 에 터미널로 접근을 허락하는 option 입니다. **--name plex** 는 container 의 이름을 plex 로 지정한다는 뜻입니다. 이미 똑같은 이름이 있는 경우는 container 생성 및 실행이 실패합니다. **-e** 는 환경 변수를 지정하는 옵션입니다. **-v** 옵션으로 호스트 PC 의 폴더와 container 의 폴더를 공유하기 위해 사용하는 옵션입니다. 
 
    ```shell
    -v [host의 폴더경로]:[container의 폴더경로]
@@ -46,7 +46,7 @@ linux에서 container 간 격리 하여 가상화 비슷한 환경을 구성한 
    ```
 
 3. **컨테이너 터미널(shell) 접속**
-   실행되고 있는 container 에 터미널로 접근하기 위해서는 run 할때 **... -it ..... /bin/bash** 등의  온셥을 주어야 한다고 위에서 말하였습니다. 컨테이너의 터미널을 닫고 다시 재접속하는 방법은 **docker attach plex** 등으로 접근하면 됩니다. 빠져나올때는 `ctrl + p + q` 를 눌러서 빠져나옵니다. exit 명령어로 빠져나오면 container 가 정지되니 조심하세요.
+   실행되고 있는 container 에 터미널로 접근하기 위해서는 run 할때 **... -it ..... /bin/bash** 등의 옵션을 주어야 한다고 위에서 말하였습니다. 컨테이너의 터미널을 닫고 다시 재접속하는 방법은 **docker attach plex** 등으로 접근하면 됩니다. 빠져나올때는 `ctrl + p + q` 를 눌러서 빠져나옵니다. exit 명령어로 빠져나오면 container 가 정지되니 조심하세요.
 
    ```shell
    $ docker attach [컨테이너명]

@@ -4,7 +4,7 @@ title: 이진 탐색 트리 (BST)
 
 # Binary Search Tree, BST (이진 탐색 트리)
 
-이진 트리에서는 하나의 Node 가 **1개의 key**(data) 와 **2개의 자식 node 를 가리키는 link(left,right)** 를 가지고있습니다. BST(이진 탐색 트리)는 **검색, 삽입, 삭제**은 평균 *O(log n)* 의 시간 복잡도를 가집니다. 하지만 최악의 경우 [편향이진트리(구글 이미지 검색)](https://www.google.co.kr/search?biw=1920&bih=949&tbm=isch&sa=1&ei=RUvEWrv0PIa60gSgsovgDw&q=%ED%8E%B8%ED%96%A5+%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC&oq=%ED%8E%B8%ED%96%A5+%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC&gs_l=psy-ab.3...4789.6619.0.6922.9.9.0.0.0.0.107.722.7j1.8.0....0...1c.4.64.psy-ab..1.0.0....0.qc-1q4z-qTY) 생성되면 최악의 효율*O(n)*이 발생합니다. 이를 보완하고 좌우 균형을 맞추어 탐색 효율을  목적으로  **B tree**라는 것을 사용합니다.
+이진 트리에서는 하나의 Node 가 **1개의 key**(data) 와 **2개의 자식 node 를 가리키는 link(left,right)** 를 가지고있습니다. BST(이진 탐색 트리)는 **검색, 삽입, 삭제**은 평균 *O(log n)* 의 시간 복잡도를 가집니다. 하지만 최악의 경우 [편향이진트리](https://www.google.com/search?q=%ED%8E%B8%ED%96%A1+%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC&tbm=isch)가 생성되면 최악의 효율*O(n)*이 발생합니다. 이를 보완하고 좌우 균형을 맞추어 탐색 효율을 높일 목적으로 자가 균형 트리(self-balancing tree)인 **AVL 트리, 레드-블랙 트리** 등을 사용합니다. (데이터베이스 등에서는 다진 균형 트리인 **B-tree** 계열도 사용합니다.)
 
 아래의 java 소스코드는 [해외 블로그](https://algorithms.tutorialhorizon.com/binary-search-tree-complete-implementation/)를 참고하였습니다. 탐색,삽입 하는 코드는 비교적 간결하고, 트리의 node 를 삭제하는 logic 은 3가지로 분류 됩니다. 
 
@@ -194,6 +194,7 @@ class Node {
 
 
 참고 문서 - [이진탐색트리(java)](https://algorithms.tutorialhorizon.com/binary-search-tree-complete-implementation/)
+
 ## 관련 페이지
 - [[binary-tree]] — 트리·이진 트리 기본 개념
 - [[algorithm-coding-mistakes]] — 코딩 실수 방지 패턴

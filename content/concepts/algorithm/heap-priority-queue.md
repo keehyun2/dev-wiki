@@ -45,12 +45,12 @@ void buildHeap(int[] arr, int nodeIndex, int heapSize) {
 
 # Priority queue(우선순위 큐)
 
-큐는 **first-int,first-out**(선입선출) 자료구조(FIFO)로 입니다. 우선순위 큐는 **best-in, first-out**(최적입선출) 인 자료구조(BIFO)입니다. 더 작은 작업에 더 높은 우선순위를 부여합니다. 공유 프린터가 보통 이런식으로 관리됩니다. java collection framework 에서는 **java.util.PriorityQueue **클래스를 제공하고, 구현하는 방법이 여러가지이빈다. 
+큐는 **first-in, first-out**(선입선출) 자료구조(FIFO)입니다. 우선순위 큐는 **best-in, first-out**(최적입선출) 인 자료구조(BIFO)입니다. 더 작은 작업에 더 높은 우선순위를 부여합니다. 공유 프린터가 보통 이런식으로 관리됩니다. java collection framework 에서는 **java.util.PriorityQueue** 클래스를 제공하고, 구현하는 방법이 여러 가지입니다. 
 
 **방법1**. 이것이 기본형이면 간단하게 구현이 가능한데 아래는 **int** 형에 대한 우선순위 큐 사용법입니다. 
 
 ```java
-PriorityQueue pq = new PriorityQueue(Collections.reverseOrder()); 
+PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); 
 pq.offer(2);
 pq.offer(1);
 pq.offer(9);
@@ -58,7 +58,7 @@ pq.offer(7);
 pq.offer(4);
 pq.offer(8);
 pq.offer(10);
-pq.toString(); // [10, 7, 9, 1, 4, 2, 8]
+pq.toString(); // [10, 7, 9, 1, 4, 2, 8] — 힙 내부 배열 순서이지 정렬된 순서가 아님에 주의
 ```
 
 이것을 객체에 사용하기 위해서는 객체들을 비교할 수 있는 방법이 있어야합니다.  
@@ -91,7 +91,7 @@ public static void main(String[] args) throws NumberFormatException, IOException
 }
 ```
 
-위와 같이 **Comparable** 인터페이스의 **comparTo** 함수 내부를 구현하면됩니다. 
+위와 같이 **Comparable** 인터페이스의 **compareTo** 함수 내부를 구현하면됩니다. 
 
 ```java
 s1.compareTo(s2) < 0 //  s1 < s2
@@ -125,7 +125,7 @@ public class Test
 // StringLengthComparator.java
 import java.util.Comparator;
 
-public class StringLengthComparator implements Comparator<String>
+class StringLengthComparator implements Comparator<String>
 {
     @Override
     public int compare(String x, String y)
@@ -155,13 +155,14 @@ comparator.compare(s1, s2) == 0 // s1 == s2
 comparator.compare(s1, s2) > 0 // s1 > s2
 ```
 
-PriorityQueue 인터페이스를 위한 add() 메소드는 본질적으로 **heapify** 알고리즘의 반대인 알고리즘을 사용합니다. 이것은 leaf에서 root로 tree 를 올라가며 순회합니다. 트리에 대한 모든 삽입 알고리즘과 같이, 이것도 처음에는 새로운 leaf node 로 원소를 삽입합니다. 그런 다음 이 노드와 이것보다 작은 모든 선조에 대해 회전을 수행합니다.
+PriorityQueue 클래스의 add() 메소드는 힙의 leaf에서 root로 올라가며 **교환(swap)**을 반복하는 방식(sift-up)으로 위치를 찾습니다. 트리에 대한 모든 삽입 알고리즘과 같이, 이것도 처음에는 새로운 leaf node 로 원소를 삽입합니다. 그런 다음 힙 조건을 만족할 때까지 이 노드와 그 선조들을 교환합니다.
 
 
 
 
 
 참고 문서 - [StackOverflow](https://stackoverflow.com/questions/683041/how-do-i-use-a-priorityqueue)
+
 ## 관련 페이지
 - [[sorting-algorithms]] — 힙 정렬 포함 정렬 알고리즘 총정리
 - [[linked-list-stack-queue]] — 연결리스트, 스택, 큐

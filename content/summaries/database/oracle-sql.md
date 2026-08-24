@@ -111,10 +111,11 @@ WHERE ROWID > (
 ### TOP N
 
 ```sql
+-- 급여 상위 10명: ROWNUM은 ORDER BY 이전에 할당되므로
+-- 정렬이 안쪽 인라인 뷰에서 끝난 뒤 번호를 매겨야 합니다.
 SELECT * FROM (
-    SELECT e.*, ROWNUM as rn
+    SELECT e.*, ROW_NUMBER() OVER (ORDER BY salary DESC) AS rn
     FROM employees e
-    ORDER BY salary DESC
 )
 WHERE rn <= 10;
 ```

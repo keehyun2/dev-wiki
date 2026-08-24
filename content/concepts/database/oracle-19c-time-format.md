@@ -43,8 +43,8 @@ SELECT TO_CHAR(SYSDATE, 'SS') AS seconds
 FROM dual;
 -- 결과: 45
 
--- 밀리초
-SELECT TO_CHAR(SYSDATE, 'HH24:MI:SS.FF3') AS with_millis
+-- 밀리초 (DATE 타입인 SYSDATE에는 소수 초가 없으므로 SYSTIMESTAMP 사용)
+SELECT TO_CHAR(SYSTIMESTAMP, 'HH24:MI:SS.FF3') AS with_millis
 FROM dual;
 -- 결과: 14:30:45.123
 ```
@@ -63,8 +63,8 @@ SELECT TO_CHAR(SYSDATE, 'YYYYMMDD_HH24MISS') AS filename_timestamp
 FROM dual;
 -- 결과: 20240115_143045
 
--- 로그용 포맷
-SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS.FF3') AS log_timestamp
+-- 로그용 포맷 (소수 초는 SYSTIMESTAMP로만 표현 가능)
+SELECT TO_CHAR(SYSTIMESTAMP, 'YYYY-MM-DD HH24:MI:SS.FF3') AS log_timestamp
 FROM dual;
 -- 결과: 2024-01-15 14:30:45.123
 ```
@@ -73,10 +73,10 @@ FROM dual;
 
 ### EXTRACT로 시간 추출
 ```sql
--- 시간 추출
-SELECT EXTRACT(HOUR FROM SYSDATE) AS hour,
-       EXTRACT(MINUTE FROM SYSDATE) AS minute,
-       EXTRACT(SECOND FROM SYSDATE) AS second
+-- 시간 추출 (SYSDATE처럼 DATE 타입은 바로 EXTRACT할 수 없어 TIMESTAMP로 캐스팅)
+SELECT EXTRACT(HOUR FROM CAST(SYSDATE AS TIMESTAMP)) AS hour,
+       EXTRACT(MINUTE FROM CAST(SYSDATE AS TIMESTAMP)) AS minute,
+       EXTRACT(SECOND FROM CAST(SYSDATE AS TIMESTAMP)) AS second
 FROM dual;
 -- 결과: 14 | 30 | 45
 ```
@@ -132,15 +132,15 @@ END AS business_status
 FROM dual;
 ```
 
-### 시간 반올림
+### 시간 버림
 ```sql
--- 시간 단위로 내림
-SELECT TRUNC(SYSDATE, 'HH24') AS hour_start
+-- 시간 단위로 내림 (TRUNC의 포맷은 'HH24'가 아니라 'HH')
+SELECT TRUNC(SYSDATE, 'HH') AS hour_start
 FROM dual;
 
 -- 15분 단위로 내림
 SELECT TRUNC(SYSDATE, 'MI') -
-       MOD(EXTRACT(MINUTE FROM SYSDATE), 15) / (24*60) AS rounded_15min
+       MOD(EXTRACT(MINUTE FROM CAST(SYSDATE AS TIMESTAMP)), 15) / (24*60) AS rounded_15min
 FROM dual;
 ```
 

@@ -131,7 +131,7 @@ public class LinkedList {
 
 # Stack
 
-**후입선출(LIFO: last-in First-out)** 구조의 자료구조입니다. 이 구조에서 접근 가능한 유일한 객체는 가장 최근에 삽입된 객체입니다. 목록의 중간에 있는 요소들에 접근하여 작업하는 일 없으며, 배열보다는 **연결리스트**로 구현하는게 더 효율적입니다. 
+**후입선출(LIFO: Last-In, First-Out)** 구조의 자료구조입니다. 이 구조에서 접근 가능한 유일한 객체는 가장 최근에 삽입된 객체입니다. 목록의 중간에 있는 요소들에 접근하여 작업하는 일 없이, 배열보다는 **연결리스트**로 구현하는게 더 효율적입니다. 
 
 아래는 스택의 Abstract Data Type(ADT) 입니다. 
 
@@ -144,13 +144,20 @@ public class LinkedList {
 
 **백트래킹**을 관리하기 위한 stack 의 사용은 **게임** 플레이나 이성적인 사유의 일반화된 모델링에서 흔히 사용되는 전략입니다. 일반적으로 두뇌에서 **시행착오 전략**이 이와 같은 방법을 사용하고 있음은 명확합니다. 
 
-java 에서는 CollectionFramework 에서 제공하는 **java.util.LinkedList** 를 이용하여 stack 을 사용합니다.
+java 에서는 CollectionFramework 에서 제공하는 **java.util.Deque** 인터페이스와 그 구현체 **java.util.ArrayDeque** 를 이용하여 stack 을 사용합니다. (java.util.Stack 은 설계가 오래되어 Deque 사용이 권장됩니다.)
+
+```java
+Deque<Integer> stack = new ArrayDeque<>();
+stack.push(1);    // push
+stack.pop();      // pop (마지막에 넣은 원소)
+stack.peek();     // peek
+```
 
 
 
 # Queue
 
-**선입선출(LIFO: First-in First-out)** 을 표현하는 자료구조입니다. 삽입은 항상 큐의 뒤(back or rear)에서 수행되고, 제거는 항상 앞(front)에서 진행됩니다. 큐도 배열보다는 **연결리스트**로 구현하는게 더 효율적입니다.  
+**선입선출(FIFO: First-In, First-Out)** 을 표현하는 자료구조입니다. 삽입은 항상 큐의 뒤(back or rear)에서 수행되고, 제거는 항상 앞(front)에서 진행됩니다. 큐도 배열보다는 **연결리스트**로 구현하는게 더 효율적입니다.  
 
 아래는 큐의 ADT 입니다. 
 
@@ -163,7 +170,7 @@ java 에서는 CollectionFramework 에서 제공하는 **java.util.LinkedList** 
 
 큐의 활용은 프린터 출력 처럼 들어온 작업 순서대로 처리하거나, 그래프 탐색등에서 사용할 수 있습니다. 
 
-java 에서는 CollectionFramework 에서 제공하는 **java.util.LinkedList**를 이용하여  queue를 사용합니다.
+java 에서는 CollectionFramework 에서 제공하는 **java.util.Queue** 인터페이스와 그 구현체 **java.util.LinkedList** 를 이용하여 queue를 사용합니다.
 
 
 
@@ -186,7 +193,8 @@ class Node {
         this.data = data;
     }
     
-    String toString(){
+    @Override
+    public String toString(){
         return String.valueOf(this.data);
     }
 }
@@ -195,6 +203,7 @@ System.out.print(new Node(1)); // 1이 출력
 ```
 
 위와 같이 toString() 을 재정의하여 node 객체의 data 를 바로 출력할 수 있습니다.
+
 ## 관련 페이지
 - [[binary-tree]] — 트리·이진 트리 기본 개념
 - [[coding-test-language-basics]] — 언어별 입출력·반복문 비교

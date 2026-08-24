@@ -30,7 +30,7 @@ crontab에 매일 새벽 3시에 돌아가는 예약 작업을 등록해서 관�
 `$ crontab -e`
 
 ```shell
-# 로그파일명 뒤에 날짜를 붙혀서 백업하고, 기존의 로그는 내용을 지웁니다.
+# 로그파일명 뒤에 날짜를 붙여서 백업하고, 기존의 로그는 내용을 지웁니다.
 0 3 * * * \cp /var/log/mysql/general.log /var/log/mysql/general_$(date +\%Y\%m\%d).log && cat /dev/null > /var/log/mysql/general.log
 # 30일이 지난 로그는 general_*.log 파일을 찾아서 삭제합니다.
 0 3 * * * find /var/log/mysql/ -name 'general_*.log' -mtime +30 -delete

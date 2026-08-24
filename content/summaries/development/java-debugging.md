@@ -53,7 +53,7 @@ jstack -l <pid>                 # Lock 정보 포함
 jstack <pid> > thread_dump.txt  # 파일로 저장
 ```
 
-### 힘프 덤프
+### 힙 덤프
 
 ```bash
 jmap -dump:format=b,file=heap.hprof <pid>

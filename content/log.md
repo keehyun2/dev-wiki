@@ -1,5 +1,32 @@
 # 위키 작업 로그
 
+## 2026-08-24
+
+### [13:50:00] lint | 전체 문서 검토·수정 — 잘못된 내용·가독성·통일성 보완
+- **대상**: summaries/·concepts/ 전체 33개 문서 전수 검토
+- **기술적 오류 수정**:
+  - sorting-algorithms.md — 셸 정렬 customInsertionSort의 잘못된 for 루프 제거·gap 간격 이동으로 수정, gap 서로소 오역 교정("근사적으로 소수"→"서로소"), ISBN 자릿수 d=1→10, Java 7+ Arrays.sort(Dual-Pivot Quicksort/TimSort) 주석 추가
+  - binary-tree.md — 레벨 공식 (d^l-1)(d-1) → (d^l-1)/(d-1), 자식 인덱스 주석 left→right, 루트 경로 예시 12→5→2→1 → →0
+  - binary-search-tree.md — "B tree로 균형" 서술을 자가 균형 트리(AVL·레드블랙) 기준으로 교정, 구글 검색 URL 정리
+  - heap-priority-queue.md — "first-int"→"first-in", PriorityQueue 인터페이스→클래스, comparTo→compareTo, 회전→교환(sift-up), 한 파일 public class 2개 컴파일 오류 수정, raw type 제네릭 명시
+  - bitmask.md — Integer.numberOfTrainingZeros→numberOfTrailingZeros, 2^k-1→2^(N-1), NOT 비트표기·시프트 예시(12→13) 수정, 잘못된 set -= (1<<p) 삭제, 괄호 정리
+  - linked-list-stack-queue.md — 큐 "선입선출(LIFO)"→FIFO, toString() 오버라이드 public 누락(컴파일 에러) 수정, 스택 java.util.Deque/ArrayDeque 권장으로 보완
+  - coding-test-language-basics.md — nodejs 두 정수 합이 문자열 연결되는 버그(Number 변환 추가), str 변수명 섀도잉 제거
+  - java-json-parsing.md — String result 중복 선언 컴파일 오류 수정, RestfulTemplate→RestTemplate
+  - java-8-stream-map.md — Java 코드의 `#` 주석 → `//`
+  - oracle-sql.md — TOP-N 쿼리 ROWNUM·ORDER BY 순서 버그 → ROW_NUMBER() OVER 방식으로 수정
+  - oracle-19c-time-format.md — EXTRACT(HOUR FROM SYSDATE) ORA-30076 오류(TIMESTAMP 캐스팅), TRUNC 'HH24'→'HH', FF3 밀리초 SYSDATE→SYSTIMESTAMP, "반올림"→"버림" 제목 정정
+  - totp-google-otp.md — 종료된 chart.googleapis.com QR API 경고 추가, 깨진 이미지 URL 제거
+  - nfs-samba-server.md — NFC→NFS 표기 오류 3건
+  - docker-usage.md — docker exec가 "컨테이너 생성"이라는 오류 수정
+  - eclipse-shortcut.md / ide-shortcut-common-patterns.md — 이클립스 줄 복사 Alt+Shift+↑/↓ → Ctrl+Alt+↑/↓, 줄 이동 Alt+↑/↓로 정정, "동일 키, 다른 순서" 오류 패턴 재분석
+- **가독성·통일성**:
+  - ide-shortcut-common-patterns.md — "macOS에서는大部分"(중국어 혼입) → "대부분"
+  - windows-dev-tips.md — mklink를 powershell→cmd 블록으로 수정(내장 명령·관리자 권한 명시)
+  - windows-cmd-commands.md — cmd에 # 주석 없음을 명시하는 노트 추가
+  - java-debugging.md "힘프"→"힙", gcd-lcm lcm 오버플로 주의 추가, 다수 오타·조사 교정(std:begin→std::begin, 예방습니다→예방합니다, 온셥→옵션 등)
+  - totp·java-nio 등 문서 말미 링크 형식 통일, "참고 자료"→"관련 페이지" 섹션 통일, 제목 앞 빈 줄 9개 파일 정리
+
 ## 2026-07-13
 
 ### [08:40:00] create | Created summary page: eclipse-tag-selection-shortcut

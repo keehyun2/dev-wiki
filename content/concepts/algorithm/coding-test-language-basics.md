@@ -102,7 +102,7 @@ namespace C_sharp
 var fs = require('fs');
 var input = fs.readFileSync('/dev/stdin').toString().split(' ');
 // window OS - C:\dev\stdin 파일을 만들고 입력 값을 미리 저장해야 합니다
-console.log(input[0] + input[1]);
+console.log(Number(input[0]) + Number(input[1])); // 문자열이므로 숫자로 변환 후 더해야 합니다
 ```
 
 ## 언어별 반복문·조건문 — 역삼각형 별 찍기
@@ -213,15 +213,15 @@ public class Main{
 
 ```python
 N = int(input())
-str = ''
+result = ''
 for i in range(0, N):
     for j in range(0, N):
         if i > j:
-            str += " "
+            result += " "
         else:
-            str += "*"
-    str += "\n"
-print(str)
+            result += "*"
+    result += "\n"
+print(result)
 ```
 
 ### c#
@@ -268,18 +268,18 @@ namespace C_sharp
 var fs = require('fs');
 var N = Number(fs.readFileSync('/dev/stdin'));
 // window OS - C:\dev\stdin 파일을 만들고 입력 값을 미리 저장해야함...
-var str = '';
+var result = '';
 for (var i = 0; i < N; i++) {
     for (var j = 0; j < N ; j++) {
         if (j < i) {
-            str += ' ';
+            result += ' ';
         } else {
-            str += '*';
+            result += '*';
         }
     }
-    str += '\n';
+    result += '\n';
 }
-console.log(str);
+console.log(result);
 ```
 
 ## 관련 페이지

@@ -16,9 +16,9 @@ Get-Content [로그파일] -Wait -Tail 1000
 
 ## 폴더 링크 (심볼릭 링크)
 
-Linux의 **symbolic link** 기능을 Windows의 바로가기로 따라할 수는 있지만 개발할 때 경로 지정 등에는 사용할 수 없습니다. 아래와 같은 명령어로 link를 만들 수 있습니다.
+Linux의 **symbolic link** 기능을 Windows의 바로가기로 따라할 수는 있지만 개발할 때 경로 지정 등에는 사용할 수 없습니다. 아래와 같은 명령어로 link를 만들 수 있습니다. `mklink`는 cmd의 내장 명령어이므로 **명령 프롬프트(cmd)**에서 실행해야 하며, 생성 시 관리자 권한이 필요합니다.
 
-```powershell
+```cmd
 mklink /d "C:\WINDOWS\system32\config\systemprofile\.m2" "C:\Users\user\.m2"
 ```
 

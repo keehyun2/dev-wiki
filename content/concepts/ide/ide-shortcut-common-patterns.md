@@ -36,8 +36,8 @@ title: IDE 단축키 공통 패턴
 - **Shift+Alt+[방향키]**: 줄 이동/복사 (VSCode 중심)
 
 #### Alt 조합 패턴 (대체/옵션)
-- **Alt+[방향키]**: 줄 이동 (VSCode), 블록 선택 (일부 IDE)
-- **Alt+Shift+[방향키]**: 줄 복사, 태그 선택
+- **Alt+[방향키]**: 줄 이동 (VSCode, 이클립스 공통)
+- **Alt+Shift+[방향키]**: 줄 복사 (VSCode), 선택 확장 (이클립스)
 
 ---
 
@@ -60,9 +60,11 @@ title: IDE 단축키 공통 패턴
 #### 줄 조작
 | 기능 | 이클립스 | VSCode | 패턴 |
 |------|---------|--------|------|
-| 줄 복사 | Alt+Shift+↑/↓ | Shift+Alt+↑/↓ | **동일 키, 다른 순서** |
-| 줄 이동 | Alt+Shift+↓ | Alt+↑/↓ | Alt 기반 |
+| 줄 복사 | Ctrl+Alt+↑/↓ | Shift+Alt+↑/↓ | Alt+수정자 조합 |
+| 줄 이동 | Alt+↑/↓ | Alt+↑/↓ | **동일 키** |
 | 줄 삭제 | Ctrl+D | Ctrl+X/Shift+K | Ctrl 기반 |
+
+> 참고: 이클립스에서 Alt+Shift+↑/↓는 줄 조작이 아니라 선택 확장(Select Enclosing/Next Element)입니다.
 
 ---
 
@@ -135,5 +137,5 @@ title: IDE 단축키 공통 패턴
 
 - 단축키는 IDE 버전, 운영체제, 언어 설정에 따라 다를 수 있음
 - 충돌하는 단축키는 사용자 정의로 변경 가능
-- macOS에서는大部分 Ctrl → Cmd로 대체
+- macOS에서는 대부분 Ctrl → Cmd로 대체
 - 확장 프로그램 설치 시 충돌 확인 필요

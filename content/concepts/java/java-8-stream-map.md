@@ -110,7 +110,7 @@ Map<String, Integer> nameToAge = users.stream()
 // 변환 후 필터링
 List<String> result = text.stream()
     .map(String::toUpperCase)         // 대문자 변환
-    .filter(s -> s.length() > 5)     # 길이 5 초과 필터링
+    .filter(s -> s.length() > 5)     // 길이 5 초과 필터링
     .collect(Collectors.toList());
 
 // 중복 제거

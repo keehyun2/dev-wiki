@@ -50,6 +50,15 @@ int lcm(int a, int b)
 }
 ```
 
+`a * b` 를 먼저 계산하면 오버플로가 발생할 수 있으므로, 범위가 큰 경우 아래처럼 gcd로 나눈 뒤 곱하는 것이 안전합니다.
+
+```c++
+int lcm(int a, int b)
+{
+    return a / gcd(a, b) * b;
+}
+```
+
 참고 문서 - [유클리드 호제법](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95), [최대공약수](https://ko.wikipedia.org/wiki/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98), [최소공배수](https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98)
 
 ## 관련 페이지

@@ -76,7 +76,7 @@ net use Z: \\server\share /user:username password
 
 ## 선택 가이드
 
-### NFC vs Samba
+### NFS vs Samba
 | 특징 | NFS | Samba |
 |------|-----|--------|
 | 환경 | Linux ↔ Linux | Linux ↔ Windows |
@@ -86,14 +86,14 @@ net use Z: \\server\share /user:username password
 
 ### 사용 시나리오
 ```bash
-# Linux 서버 간 파일 공유 → NFC 사용
+# Linux 서버 간 파일 공유 → NFS 사용
 # 윈도우 클라이언트 접속 → Samba 사용
 # 혼합 환경 → 둘 다 설치
 ```
 
 ## 기본 명령어
 
-### NFC 관리
+### NFS 관리
 ```bash
 sudo exportfs -v              # 공유 목록 확인
 showmount -e server          # 서버 공유 확인

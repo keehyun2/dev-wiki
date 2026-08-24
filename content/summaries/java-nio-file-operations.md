@@ -162,7 +162,7 @@ FileTime modified = Files.getLastModifiedTime(path);  // 마지막 수정 타임
    - `APPEND` — 기존 파일에 추가
    - `TRUNCATE_EXISTING` — 기존 내용 덮어쓰기
 
-## 참고 자료
+## 관련 페이지
 
-- [[summaries/ide/eclipse-shortcut]] — 이클립스 단축키
+- [[concepts/java/java-8-stream-map]] — Java 8 Stream API
 - [[summaries/development/java-debugging]] — Java 디버깅

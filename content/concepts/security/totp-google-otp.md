@@ -59,12 +59,12 @@ $encoded = $Base32->encode($mb_id_long); # $mb_id_long 를 base32 로 인코딩 
 ### QR Code image print
 
 ```php+HTML
-<img id="qrImg" style="margin:0 auto;" src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=100x100&chld=M|0&cht=qr&chl=otpauth://totp/Pinnacle (<?=$mb_id?>)%3Fsecret%3D<?=$encoded?>" />
+<img id="qrImg" style="margin:0 auto;" src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=otpauth://totp/Pinnacle%20(<?=$mb_id?>)%3Fsecret%3D<?=$encoded?>" />
 ```
 
-위와 같은 태그로 google api 의 도움을 받아 QR Code 이미지를 생성하여 사용자가 인증앱에 키를 쉽게 등록하도록 합니다. chart.googleapis.com 에 접근이 불가능한 네트워크 환경(폐쇄망) 에서는 QR code 를 사용자에게 제공할 수 없습니다. 아래는 이미지 예시입니다. 파라미터를 변경하여 크기등을 조작할 수 있습니다. 
+위와 같은 태그로 google api 의 도움을 받아 QR Code 이미지를 생성하여 사용자가 인증앱에 키를 쉽게 등록하도록 합니다. 파라미터를 변경하여 크기등을 조작할 수 있습니다. 
 
-![테스트 QR Code](https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=100x100&chld=M|0&cht=qr&chl=otpauth://totp/테스트%3Fsecret%3)
+> **주의**: 예전에 널리 쓰인 `chart.googleapis.com` QR 생성 API는 **2019년에 서비스가 종료**되어 더 이상 동작하지 않습니다. 현재는 [QR Server API](https://goqr.me/api/) 같은 대안을 사용하거나, 라이브러리(예: PHP의 `endroid/qr-code`)로 직접 생성해야 합니다. 폐쇄망에서는 라이브러리 방식이 유일한 선택지입니다.
 
 ### OTP 인증번호 생성 및 비교
 
@@ -88,5 +88,9 @@ if($auth_code_now != $auth_code){
 
 
 
-OTP javascript Test - https://keehyun2.github.io/
+참고 - [OTP javascript Test](https://keehyun2.github.io/)
+
+## 관련 페이지
+- [[redis-java-client]] — 인증/세션 저장소로 쓰이는 Redis와 Java 클라이언트
+- [[java-json-parsing]] — Java JSON 파싱
 
