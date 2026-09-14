@@ -7,6 +7,7 @@ This file provides guidance to Codex (Codex.ai/code) when working with code in t
 This is a **Quartz-based wiki/digital garden** that publishes markdown content as a static website. Content is organized using a specific wiki schema with summaries, concepts, and explorations.
 
 **Technology Stack:**
+
 - **Quartz 4** - Static site generator for transforming markdown content into HTML
 - **TypeScript** - Configuration and plugin system
 - **Node.js 22+** - Runtime environment
@@ -15,6 +16,7 @@ This is a **Quartz-based wiki/digital garden** that publishes markdown content a
 ## Essential Commands
 
 ### Development
+
 ```bash
 npm install              # Install dependencies
 npm run build            # Build site to public/ (npx quartz build)
@@ -25,12 +27,14 @@ npm run test             # Run tests (tsx --test)
 ```
 
 ### Deployment
+
 ```bash
 # Automatic: Push to master branch → GitHub Actions builds and deploys to keehyun2.github.io
 # Manual: npx quartz build
 ```
 
 The deployment workflow uses:
+
 - GitHub Actions (`.github/workflows/deploy.yml`)
 - Builds with `npm ci` → `npm run build`
 - Publishes `public/` to external repository `keehyun2.github.io`
@@ -40,6 +44,7 @@ The deployment workflow uses:
 This wiki follows a **structured content schema** defined in `content/AGENTS.md`:
 
 ### Directory Structure
+
 ```
 content/
 ├── sources/          # Original documents (.md for short, .json for long). DO NOT modify directly.
@@ -51,17 +56,20 @@ content/
 ```
 
 ### Page Types
+
 1. **Summary Page** (`summaries/`): Key content extracted from a single source document
 2. **Concept Page** (`concepts/`): Cross-document topic synthesis using `[[wikilinks]]`
 3. **Exploration Page** (`explorations/`): Saved research/analysis/comparison results
 
 ### Wiki Linking
+
 - Use `[[page-name]]` or `[[path/to/page]]` format for internal links
 - Links work across all content directories
 - Quartz automatically resolves these to proper HTML paths
 
 ### Content Guidelines
-- **No YAML frontmatter** in generated content (managed by code)
+
+- **Korean `title` frontmatter** on every page; keep it short enough to stay on one line in the left explorer (about the length of `Oracle NLS_TERRITORY 날짜` — roughly 10-12 Hangul characters, ~24 mixed with Latin). No other YAML frontmatter (managed by code)
 - Standard markdown heading hierarchy
 - Keep each page focused on a single topic
 - Update `index.md` when adding new pages (one-line entry)
@@ -72,6 +80,7 @@ content/
 Configuration in `quartz.config.ts`:
 
 **Key Settings:**
+
 - `pageTitle`: "Dev Wiki"
 - `locale`: "ko-KR" (Korean)
 - `ignorePatterns`: ["private", "templates", ".obsidian", "log.md", "AGENTS.md", "test-sync.md"]
@@ -79,14 +88,17 @@ Configuration in `quartz.config.ts`:
 - `enablePopovers`: true (link preview popovers)
 
 **Transformers** (process markdown → HTML):
+
 - FrontMatter, CreatedModifiedDate, SyntaxHighlighting, ObsidianFlavoredMarkdown, GitHubFlavoredMarkdown, TableOfContents, CrawlLinks, Description, Latex
 
 **Filters**: RemoveDrafts
 
 **Emitters** (generate output files):
+
 - ContentPage, FolderPage, TagPage, ContentIndex, Assets, Static, Favicon, CustomOgImages
 
 ### Markdown Features Supported
+
 - Obsidian-style `[[wikilinks]]`
 - GitHub Flavored Markdown (tables, strikethrough, task lists)
 - LaTeX/Katex math
@@ -96,6 +108,7 @@ Configuration in `quartz.config.ts`:
 ## Architecture
 
 ### Build Pipeline
+
 ```
 content/*.md → Quartz Parser → Transformers → Filters → Emitters → public/*.html
 ```
@@ -106,14 +119,18 @@ content/*.md → Quartz Parser → Transformers → Filters → Emitters → pub
 4. **Emit**: Generate HTML pages, assets, sitemap, RSS
 
 ### Plugin System
+
 Quartz uses a plugin architecture defined in `quartz/plugins/`:
+
 - `transformers/`: Content transformation plugins
-- `filters/`: Content filtering plugins  
+- `filters/`: Content filtering plugins
 - `emitters/`: Output generation plugins
 - `processors/`: Build pipeline orchestration
 
 ### Component System
+
 Quartz components in `quartz/components/` are React-like but use **Preact**:
+
 - `pages/`: Page templates (Content, FolderContent, TagContent, 404)
 - `scripts/`: Inline scripts for interactivity (search, graph, darkmode, SPA)
 - `styles/`: SCSS stylesheets
@@ -121,6 +138,7 @@ Quartz components in `quartz/components/` are React-like but use **Preact**:
 ## Custom Skills
 
 This repository includes a custom skill for wiki page creation:
+
 - **wiki-page-creator**: Create wiki pages following the AGENTS.md schema
   - Summary pages from source documents
   - Concept pages for cross-document synthesis
@@ -136,7 +154,9 @@ Invoke via `/wiki-page-creator` or when user mentions creating wiki content, sum
 4. **Push**: Commit to master → auto-deploy via GitHub Actions
 
 ### Adding New Wiki Pages
+
 When creating content:
+
 1. Choose page type (summary/concept/exploration)
 2. Create file in appropriate directory with kebab-case naming
 3. Add wikilinks using `[[page-name]]` format

@@ -1,8 +1,30 @@
 # 위키 작업 로그
 
+## 2026-09-14
+
+### [15:55:56] create | Created exploration page: oracle-nls-territory-date-conversion
+
+- **타입**: Exploration Page (첫 explorations 페이지)
+- **위치**: content/explorations/oracle-nls-territory-date-conversion.md
+- **내용**: NLS_TERRITORY(VIETNAM)로 인한 날짜 암묵 형변환 오류 트러블슈팅 — 재현(ALTER SESSION SET NLS_TERRITORY), NLS 파라미터 우선순위, territory별 기본 NLS_DATE_FORMAT(KOREA RR/MM/DD vs VIETNAM DD-MM-RRRR), 해결·예방(포맷 마스크 명시, ANSI DATE 리터럴)
+- **업데이트**: index.md 데이터베이스 섹션에 항목 추가, oracle-19c-time-format.md에 역링크 추가
+
+### [16:07:47] update | oracle-nls-territory-date-conversion 원인 분석 정정 — 관용적 파싱(폴백) 반영
+
+- **정정**: "KOREA 기본 RR/MM/DD에서는 YYYYMMDD가 어차피 실패(RR=20, MM=24)" 주장 철회 — 실측 `TO_DATE('20261020', 'RR/MM/DD')` 에러 없이 동작 확인
+- **근거**: Oracle 문서 String-to-Date Conversion Rules의 대체 요소 폴백(RR→RRRR, YY→YYYY, MM→MON/MONTH) — 연도 우선 포맷은 8자리 YYYYMMDD를 흡수, 일 우선(DD-MM-RRRR)은 무효 월로 실패
+- **수정**: 한 줄 결론·재현 블록(통과/실패 대비)·원인 분석 4~5절 재작성, 참고 자료에 Format Models 문서 링크 추가
+
+### [16:29:32] update | title 길이 가이드라인 추가 — 탐색기 한 줄 유지
+
+- **스킬**: wiki-page-creator SKILL.md에 제목 길이 제한 추가('Oracle NLS_TERRITORY 날짜' 수준, 좌측 탐색기 줄바꿈 방지) 및 구 "No YAML frontmatter" 규칙을 현행 스키마(title 프론트매터 필수)에 맞게 정정
+- **가이드 문서**: AGENTS.md·CLAUDE.md·content/AGENTS.md에 동일 제목 길이 규칙 추가
+- **적용**: oracle-nls-territory-date-conversion.md 제목 "Oracle NLS_TERRITORY 날짜 암묵 형변환 오류" → "Oracle NLS_TERRITORY 날짜" 단축
+
 ## 2026-08-24
 
 ### [13:50:00] lint | 전체 문서 검토·수정 — 잘못된 내용·가독성·통일성 보완
+
 - **대상**: summaries/·concepts/ 전체 33개 문서 전수 검토
 - **기술적 오류 수정**:
   - sorting-algorithms.md — 셸 정렬 customInsertionSort의 잘못된 for 루프 제거·gap 간격 이동으로 수정, gap 서로소 오역 교정("근사적으로 소수"→"서로소"), ISBN 자릿수 d=1→10, Java 7+ Arrays.sort(Dual-Pivot Quicksort/TimSort) 주석 추가
@@ -30,27 +52,32 @@
 ## 2026-07-13
 
 ### [08:40:00] create | Created summary page: eclipse-tag-selection-shortcut
+
 - **타입**: Summary Page
 - **위치**: content/summaries/eclipse-tag-selection-shortcut.md
 - **내용**: 이클립스에서 여는태그와 닫는태그를 한번에 선택하는 단축키 (Alt+Shift+A)에 대한 요약
 - **소스**: content/sources/eclipse-shortcuts.md
 
 ### [08:40:00] create | Created source document: eclipse-shortcuts
+
 - **타입**: Source Document
 - **위치**: content/sources/eclipse-shortcuts.md
 - **내용**: 이클립스 단축키 전체 가이드 including 태그 선택 관련 단축키
 
 ### [08:40:00] create | Initialized wiki structure
+
 - **작업**: content/ 하위 디렉토리 구조 생성 (summaries/, concepts/, explorations/, sources/)
 - **업데이트**: index.md, log.md 생성
 
 ### [08:42:00] update | Added code formatting shortcut
+
 - **작업**: 자동정렬 단축키 (Ctrl+Shift+F) 추가
 - **업데이트 파일**:
   - content/sources/eclipse-shortcuts.md (코드 정렬 섹션 추가)
   - content/summaries/eclipse-tag-selection-shortcut.md (관련 단축키 섹션에 추가)
 
 ### [08:45:00] create | Created VSCode shortcuts pages
+
 - **타입**: Summary Page & Source Document
 - **생성 파일**:
   - content/summaries/vscode-shortcuts.md
@@ -59,6 +86,7 @@
 - **업데이트**: index.md에 VSCode 페이지 추가
 
 ### [08:50:00] create | Created developer cheat sheet pages from temp.md
+
 - **타입**: Summary Pages & Source Document
 - **생성 파일**:
   - content/sources/developers-cheatsheet.md (전체 치트시트)
@@ -72,6 +100,7 @@
 - **업데이트**: index.md에 7개 페이지 추가
 
 ### [08:55:00] reorganize | Reorganized wiki into category folders
+
 - **작업**: summaries/ 하위에 카테고리별 폴더 구조 생성
 - **생성된 폴더**:
   - content/summaries/development/ (개발 도구)
@@ -88,6 +117,7 @@
   - log.md에 재구성 기록 추가
 
 ### [09:20:00] create | Created concept page: ide-shortcut-common-patterns
+
 - **타입**: Concept Page
 - **위치**: content/concepts/ide-shortcut-common-patterns.md
 - **내용**: 이클립스와 VSCode 단축키 공통 패턴 분석 (선택 확장, 수정자 조합, 탐색 패턴)
@@ -97,6 +127,7 @@
 ## 2026-07-15
 
 ### [12:30:00] create | Created summary page: java-nio-file-operations
+
 - **타입**: Summary Page (한국어)
 - **위치**: content/summaries/java-nio-file-operations.md
 - **내용**: Java NIO 파일 작업 가이드 (Path, Files API, 읽기/쓰기, 디렉토리 순회, Java 버전 차이)
@@ -107,6 +138,7 @@
 ## 2026-08-04
 
 ### [09:15:00] create | Created concept pages from momo.md topics
+
 - **타입**: Concept Pages (Quick Reference/Cheatsheets)
 - **생성 파일**:
   - content/concepts/windows-cmd-commands.md (Windows CMD 필수 명령어)
@@ -119,6 +151,7 @@
 - **업데이트**: index.md에 Concepts 섹션에 6개 페이지 추가
 
 ### [09:45:00] simplify | Simplified concept pages for better readability
+
 - **작업**: 6개 컨셉 페이지를 간결하게 재작성 (정의, 쓰임새, 간단한 예시 중심)
 - **수정 파일**:
   - content/concepts/windows-cmd-commands.md (주요 명령어 + 유용한 패턴)
@@ -132,6 +165,7 @@
 ## 2026-08-21
 
 ### [10:00:00] create | Created concept page: eclipse-plugin-development
+
 - **타입**: Concept Page
 - **위치**: content/concepts/eclipse-plugin-development.md
 - **내용**: 이클립스 플러그인 개발 기초 (OSGi 번들 구조, Extension Point, PDE/Target Platform, 주요 확장 포인트, View/Handler 예제, 3.x vs e4, 실행/디버깅, 배포)
@@ -140,6 +174,7 @@
 ## 2026-08-23
 
 ### [11:50:00] ingest | Google Keep 마크다운 백업에서 유용한 문서 15개 위키로 이관
+
 - **소스**: ~/Downloads/markdown-20260823T001406Z-1-001/markdown (2017~2019년 학습 노트)
 - **선별 기준**: 미완성(작성중/빈 파일) 제외, 오래된 기술(bower, AngularJS, bintray/jCenter, Selenium 3+IE, Rinkeby) 제외, 민감 정보 포함 문서(사내 시스템, 계정/비밀번호) 제외
 - **생성 파일**:
@@ -162,6 +197,7 @@
 - **업데이트**: index.md에 '알고리즘 · 자료구조' 카테고리 신설(9페이지), 데이터베이스·컨셉 섹션에 6페이지 추가
 
 ### [12:30:00] restructure | concepts/ 폴더 주제별 분할 + 전체 페이지 한글 제목 부여
+
 - **폴더 분할**: content/concepts/ 하위 22개 파일을 7개 주제 폴더로 이동 (git mv)
   - algorithm/ (9): sorting-algorithms, binary-tree, binary-search-tree, heap-priority-queue, linked-list-stack-queue, bitmask, gcd-lcm-euclidean, algorithm-coding-mistakes, coding-test-language-basics
   - java/ (4): java-8-stream-map, java-ehcache, java-json-parsing, redis-java-client
