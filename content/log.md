@@ -1,5 +1,14 @@
 # 위키 작업 로그
 
+## 2026-10-01
+
+### [18:13:23] create | Created concept page: vip-ha-load-balancing
+
+- **타입**: Concept Page
+- **위치**: content/concepts/devops/vip-ha-load-balancing.md
+- **내용**: VIP(논리 IP, Keepalived/VRRP failover 동작), Active/Standby 이중화(Hot/Cold·Active/Active 비교), 라운드 로빈(DNS vs L4 로드밸런서, 한계, Weighted/Least Connection/IP Hash 비교) 및 세 개념의 관계 정리
+- **업데이트**: index.md DevOps 섹션에 항목 추가
+
 ## 2026-09-14
 
 ### [15:55:56] create | Created exploration page: oracle-nls-territory-date-conversion

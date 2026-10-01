@@ -56,6 +56,7 @@ title: 홈
 
 - [[concepts/devops/docker-usage]] — Docker 사용법 (이미지 내려받기, 컨테이너 실행 옵션, Dockerfile 빌드)
 - [[concepts/devops/nfs-samba-server]] — NFS 및 Samba 서버 설정 (설치, 공유 설정, 클라이언트 연결, 트러블슈팅)
+- [[concepts/devops/vip-ha-load-balancing]] — VIP·이중화(Active/Standby)·라운드 로빈 (failover, 부하 분산 알고리즘 비교)
 
 ## 보안 (Security)
 
