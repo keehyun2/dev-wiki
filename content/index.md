@@ -35,7 +35,8 @@ title: dev-wiki
 
 - [[summaries/java-nio-file-operations]] — Java NIO 파일 작업 가이드 (Path, Files API, 읽기/쓰기, 디렉토리 순회)
 - [[concepts/java/java-8-stream-map]] — Java 8 Stream map 사용법 (변환, flatMap, 일반 패턴)
-- [[concepts/java/java-functional-interface-generics]] — Java 함수형 인터페이스·제네릭 (람다, method reference, PECS, 타입 소거)
+- [[concepts/java/java-functional-interface]] — Java 함수형 인터페이스 (람다, method reference, java.util.function, 기본형 특화)
+- [[concepts/java/java-generics]] — Java 제네릭 (타입 한정, PECS 와일드카드, 타입 소거 제약)
 - [[concepts/java/java-ehcache]] — Java Ehcache 가이드 (기본 사용, 리소스 풀, 만료 정책, 캐싱 전략)
 - [[concepts/java/java-json-parsing]] — Java JSON 파싱 (gson + commons-io, RestTemplate)
 - [[concepts/java/redis-java-client]] — Redis와 Java 클라이언트 (설치, Jedis, Redisson)

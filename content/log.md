@@ -233,3 +233,9 @@
   - `sources/`는 원본 문서라 미수정
 - **유지**: heap-priority-queue, linked-list-stack-queue — 첫 H1이 제목 중복이 아닌 섹션 헤더(`# Heap(히프)`/`# Priority queue` 등 병렬 구조)라 제거하면 구조 깨짐
 - **검증**: 빌드 후 전체 HTML 스캔 — 모든 페이지 본문 h1 1개, index.html `<title>dev-wiki</title>` 확인
+
+## [2026-10-02 10:06:48] restructure | 함수형 인터페이스·제네릭 통합 페이지를 2개로 분할
+
+- **분리**: java-functional-interface-generics.md → java-functional-interface.md(람다, 메서드 레퍼런스, java.util.function, 기본형 특화, 캡처 규칙, target typing, 실전 패턴) + java-generics.md(기본 문법, 타입 한정, PECS, 타입 소거, 런타임 타입 정보, 주의사항)
+- **상호 링크**: 두 페이지가 서로 wikilink로 연결, 각각 java-8-stream-map과도 연결
+- **index.md**: 기존 1개 항목을 2개 항목으로 교체
