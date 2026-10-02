@@ -2,8 +2,6 @@
 title: MySQL 쿼리 로그 설정 및 관리
 ---
 
-# MySQL Query Log 설정 및 관리
-
 ## General Query Log 설정
 
 mysql에서 실행한 쿼리 내역을 로그로 남기기 위해선 추가적인 설정이 필요합니다.
@@ -46,5 +44,6 @@ crontab에 매일 새벽 3시에 돌아가는 예약 작업을 등록해서 관�
 ```
 
 ## 관련 페이지
+
 - [[oracle-sql]] — Oracle SQL 필수 문법
 - [[linux-commands]] — crontab 등 Linux 명령어

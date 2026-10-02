@@ -2,8 +2,6 @@
 title: Oracle NLS_TERRITORY 날짜
 ---
 
-# Oracle NLS_TERRITORY 날짜 암묵 형변환 오류
-
 한국에서는 `'YYYYMMDD'` 문자열이 날짜로 잘 변환되던 SQL이 베트남 서버에서 암묵 형변환 오류를 일으켰다. 로컬에서 `ALTER SESSION SET NLS_TERRITORY = 'VIETNAM'`만으로 동일하게 재현되었다.
 
 **한 줄 결론**: 포맷 마스크 없는 `TO_DATE`·문자열-DATE 비교는 세션의 `NLS_DATE_FORMAT`을 따르고, 그 기본값은 `NLS_TERRITORY`에서 파생된다. 한국(연도 우선 `RR/MM/DD`)에서는 관용적 파싱(폴백) 덕에 `YYYYMMDD`가 통과했지만, 베트남(일 우선 `DD-MM-RRRR`)에서는 같은 문자열이 무효 월로 해석돼 실패한다.

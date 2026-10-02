@@ -2,8 +2,6 @@
 title: Windows 개발 팁
 ---
 
-# Windows 개발 팁 (tail, 심볼릭 링크, 배치)
-
 Windows에서 Linux 스타일 작업을 해야 할 때 유용한 기능들입니다.
 
 ## 로그 파일 실시간 모니터링 (tail)
@@ -41,6 +39,7 @@ tree /f
 ```
 
 ## 관련 페이지
+
 - [[windows-cmd-commands]] — Windows CMD 필수 명령어
 - [[powershell-commands]] — PowerShell 필수 명령어
 - [[linux-commands]] — Linux 대응 명령어

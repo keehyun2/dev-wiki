@@ -2,13 +2,12 @@
 title: Java 8 Stream map 사용법
 ---
 
-# Java 8 Stream map 사용법
-
 **Stream map()**은 Java 8에서 컬렉션 요소를 변환하는 핵심 메서드로, 함수형 프로그래밍 스타일의 데이터 처리를 제공합니다.
 
 ## 기본 map() 사용
 
 ### 요소 변환
+
 ```java
 // 문자열 대문자 변환
 List<String> names = Arrays.asList("john", "jane", "bob");
@@ -31,6 +30,7 @@ List<Integer> ints = numbers.stream()
 ```
 
 ### 객체 속성 추출
+
 ```java
 class User {
     String name;
@@ -47,6 +47,7 @@ List<String> names = users.stream()
 ## flatMap() 사용
 
 ### 리스트 평탄화
+
 ```java
 // 중첩 리스트를 단일 리스트로 변환
 List<List<Integer>> nested = Arrays.asList(
@@ -61,6 +62,7 @@ List<Integer> flattened = nested.stream()
 ```
 
 ### 문자열 분리
+
 ```java
 // 문장을 단어 단위로 분리
 List<String> sentences = Arrays.asList("Hello world", "Java streams");
@@ -74,6 +76,7 @@ List<String> words = sentences.stream()
 ## map() vs flatMap()
 
 ### 차이점
+
 ```java
 // map(): 1:1 변환
 Stream<X> → map(function) → Stream<Y>
@@ -94,6 +97,7 @@ words.stream().flatMap(w -> Arrays.stream(w.split("")));  // 'h','e','l','l','o'
 ## 실전 패턴
 
 ### 데이터 변환
+
 ```java
 // DTO 변환
 List<UserDTO> dtos = users.stream()
@@ -106,6 +110,7 @@ Map<String, Integer> nameToAge = users.stream()
 ```
 
 ### 체이닝과 필터링
+
 ```java
 // 변환 후 필터링
 List<String> result = text.stream()
@@ -123,6 +128,7 @@ List<String> unique = users.stream()
 ## 성능 고려사항
 
 ### 프리미티브 스트림
+
 ```java
 // boxing 오버헤드 방지
 List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
@@ -133,6 +139,7 @@ int sum = numbers.stream()
 ```
 
 ### 지연 연산
+
 ```java
 // 스트림은 지연 연산
 List<String> result = bigList.stream()
@@ -145,6 +152,7 @@ List<String> result = bigList.stream()
 ## 주의사항
 
 ### 일반적인 실수
+
 ```java
 // ❌ 소스 수정 시도
 list.stream().forEach(s -> list.remove(s));  // ConcurrentModificationException
@@ -165,5 +173,6 @@ List<String> result = list.stream()
 ```
 
 ## 관련 페이지
+
 - [[java-debugging]] — Java 디버깅
 - [[java-ehcache]] — Java 캐싱

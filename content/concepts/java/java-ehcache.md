@@ -2,19 +2,19 @@
 title: Java Ehcache 가이드
 ---
 
-# Java Ehcache 가이드
-
 **Ehcache**는 Java 애플리케이션을 위한 강력한 캐싱 솔루션으로, 메모리, 디스크, 분산 캐싱을 지원합니다.
 
 ## 개요
 
 ### 주요 특징
+
 - **인메모리 캐싱**: 빠른 데이터 접근
 - **디스크 캐싱**: 대용량 데이터 저장
 - **분산 캐싱**: 여러 서버 간 캐시 공유
 - **다층 아키텍처**: Heap → Off-heap → Disk
 
 ### 의존성 추가
+
 ```xml
 <dependency>
     <groupId>org.ehcache</groupId>
@@ -26,6 +26,7 @@ title: Java Ehcache 가이드
 ## 기본 사용법
 
 ### 캐시 생성 및 사용
+
 ```java
 // 캐시 매니저 생성
 CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().build();
@@ -51,6 +52,7 @@ cacheManager.close();
 ```
 
 ### 기본 CRUD 작업
+
 ```java
 Cache<String, User> cache = cacheManager.getCache("userCache", String.class, User.class);
 
@@ -72,6 +74,7 @@ if (cache.containsKey("user1")) {
 ## 리소스 풀 설정
 
 ### 힙 메모리
+
 ```java
 // 항목 수로 제한
 ResourcePoolsBuilder.heap(1000)
@@ -81,6 +84,7 @@ ResourcePoolsBuilder.heap(100, MemoryUnit.MB)
 ```
 
 ### 다층 캐싱
+
 ```java
 // Heap → Off-heap → Disk
 Cache<String, Data> cache = cacheManager.createCache("multiTierCache",
@@ -97,6 +101,7 @@ Cache<String, Data> cache = cacheManager.createCache("multiTierCache",
 ## 만료 정책
 
 ### 시간 기반 만료
+
 ```java
 // Time-to-Live (생존 시간)
 .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(Duration.ofMinutes(10)))
@@ -106,6 +111,7 @@ Cache<String, Data> cache = cacheManager.createCache("multiTierCache",
 ```
 
 ### 조건부 연산
+
 ```java
 // 없을 때만 추가
 cache.putIfAbsent("user1", defaultUser);
@@ -120,6 +126,7 @@ User user = cache.computeIfAbsent("user1", key -> loadUser(key));
 ## 캐싱 전략
 
 ### Read-through
+
 ```java
 // 캐시 미스 시 자동 로드
 CacheLoaderWriter<String, User> loader = new CacheLoaderWriter<String, User>() {
@@ -136,6 +143,7 @@ CacheConfigurationBuilder.newCacheConfigurationBuilder(
 ```
 
 ### Write-through
+
 ```java
 // 캐시 쓰기 시 DB에도 저장
 CacheLoaderWriter<String, User> loader = new CacheLoaderWriter<String, User>() {
@@ -149,6 +157,7 @@ CacheLoaderWriter<String, User> loader = new CacheLoaderWriter<String, User>() {
 ## 모범 사례
 
 ### 설정 가이드라인
+
 ```java
 // 1. 적절한 캐시 크기 설정
 ResourcePoolsBuilder.heap(1000)  // 너무 작거나 크지 않게
@@ -165,6 +174,7 @@ cache.get(computeComplexKey(userId, sessionId));  // 나쁨
 ```
 
 ### 성능 최적화
+
 ```java
 // 히트 비율 모니터링
 CacheStatistics stats = cache.getStatistics();
@@ -182,6 +192,7 @@ cache.putAll(entries); // 개별 put보다 효율적
 ## 문제 해결
 
 ### 메모리 관리
+
 ```java
 // 문제: 과도한 힙 사용으로 OutOfMemoryError
 // 해결: Off-heap 및 디스크 계층 사용
@@ -192,5 +203,6 @@ ResourcePoolsBuilder.newResourcePoolsBuilder()
 ```
 
 ## 관련 페이지
+
 - [[java-8-stream-map]] — Java 8 Stream API
 - [[java-debugging]] — Java 디버깅

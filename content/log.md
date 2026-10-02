@@ -218,3 +218,18 @@
 - **한글 제목**: 빌드되는 모든 페이지(38개)에 `title` frontmatter 추가 — 탐색기/검색/브라우저 탭에 한글 표시, 폴더명·파일명은 영문 kebab-case 유지
 - **링크 정리**: index.md 카탈로그를 새 폴더 구조에 맞게 재구성(Windows·DevOps·보안 섹션 신설), eclipse-plugin-development.md 내 wikilink 경로 수정
 - **가이드라인**: AGENTS.md·CLAUDE.md·wiki-page-creator 스킬의 프론트매터 규칙을 "한글 title 허용"으로 업데이트
+
+## [2026-10-02 10:06:48] create | Created concept page: java-functional-interface-generics
+
+- **파일**: content/concepts/java/java-functional-interface-generics.md
+- **내용**: Java 함수형 인터페이스(@FunctionalInterface 조건, 람다, 메서드 레퍼런스 4종, java.util.function 표, 기본형 특화, effectively final)와 제네릭(기본 문법, bounded type, PECS 와일드카드, 타입 소거 제약) 정리 + 두 개념의 결합(target typing, 제네릭 함수형 인터페이스 정의)
+- **업데이트**: index.md Java 섹션에 항목 추가
+
+## [2026-10-02 10:06:48] fix | 메인 페이지 html title 수정 + 본문 H1 제목 중복 제거
+
+- **index.md**: frontmatter title `홈` → `dev-wiki` (브라우저 탭 제목 수정, ArticleTitle에도 반영)
+- **H1 중복 제거(32페이지)**: ArticleTitle(frontmatter title)과 본문 첫 `#` 헤딩이 같은 제목을 이중으로 출력하던 페이지에서 본문 H1 삭제 — concepts 21페이지, summaries 10페이지, explorations 1페이지
+  - 완전 중복 18페이지 + 사소한 표기 차이만 있던 중복 14페이지(영문/한글 병기, 괄호 부연 등) 포함
+  - `sources/`는 원본 문서라 미수정
+- **유지**: heap-priority-queue, linked-list-stack-queue — 첫 H1이 제목 중복이 아닌 섹션 헤더(`# Heap(히프)`/`# Priority queue` 등 병렬 구조)라 제거하면 구조 깨짐
+- **검증**: 빌드 후 전체 HTML 스캔 — 모든 페이지 본문 h1 1개, index.html `<title>dev-wiki</title>` 확인

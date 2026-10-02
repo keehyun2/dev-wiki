@@ -2,8 +2,6 @@
 title: 코딩 테스트 언어별 기본 문법
 ---
 
-# 코딩 테스트 언어별 기본 문법 (입출력, 반복문, 조건문)
-
 같은 문제를 c, c++, java, python, c#, nodejs 로 각각 푼 예제 모음입니다. 언어별 입출력 방식과 반복문·조건문 차이를 한눈에 비교할 수 있습니다.
 
 ## 언어별 입출력 — 두 정수의 합
@@ -99,8 +97,8 @@ namespace C_sharp
 ### nodejs
 
 ```javascript
-var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split(' ');
+var fs = require("fs");
+var input = fs.readFileSync("/dev/stdin").toString().split(" ");
 // window OS - C:\dev\stdin 파일을 만들고 입력 값을 미리 저장해야 합니다
 console.log(Number(input[0]) + Number(input[1])); // 문자열이므로 숫자로 변환 후 더해야 합니다
 ```
@@ -265,23 +263,24 @@ namespace C_sharp
 ### nodejs
 
 ```javascript
-var fs = require('fs');
-var N = Number(fs.readFileSync('/dev/stdin'));
+var fs = require("fs");
+var N = Number(fs.readFileSync("/dev/stdin"));
 // window OS - C:\dev\stdin 파일을 만들고 입력 값을 미리 저장해야함...
-var result = '';
+var result = "";
 for (var i = 0; i < N; i++) {
-    for (var j = 0; j < N ; j++) {
-        if (j < i) {
-            result += ' ';
-        } else {
-            result += '*';
-        }
+  for (var j = 0; j < N; j++) {
+    if (j < i) {
+      result += " ";
+    } else {
+      result += "*";
     }
-    result += '\n';
+  }
+  result += "\n";
 }
 console.log(result);
 ```
 
 ## 관련 페이지
+
 - [[algorithm-coding-mistakes]] — 코딩 실수 방지 패턴
 - [[gcd-lcm-euclidean]] — 유클리드 호제법 (gcd/lcm)
