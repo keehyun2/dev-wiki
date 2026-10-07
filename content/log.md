@@ -239,3 +239,9 @@
 - **분리**: java-functional-interface-generics.md → java-functional-interface.md(람다, 메서드 레퍼런스, java.util.function, 기본형 특화, 캡처 규칙, target typing, 실전 패턴) + java-generics.md(기본 문법, 타입 한정, PECS, 타입 소거, 런타임 타입 정보, 주의사항)
 - **상호 링크**: 두 페이지가 서로 wikilink로 연결, 각각 java-8-stream-map과도 연결
 - **index.md**: 기존 1개 항목을 2개 항목으로 교체
+
+## [2026-10-06 18:28:29] create | Created exploration page: browser-cache-clearing
+
+- **파일**: content/explorations/browser-cache-clearing.md
+- **내용**: 브라우저 캐시 초기화 정리 (Chrome·Edge 공통) — 단축키 표(F5/Ctrl+Shift+R/Ctrl+Shift+Del/F12/Ctrl+Shift+N), 강제 새로고침과 Empty Cache and Hard Reload, 설정에서 전체 삭제(쿠키 주의), DevTools 활용(Disable cache, 명령 팔레트, Clear site data), 상황별 방법 선택 표
+- **업데이트**: index.md 프론트엔드 섹션에 항목 추가(첫 번째 프론트엔드 페이지)

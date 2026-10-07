@@ -66,7 +66,7 @@ title: dev-wiki
 
 ## 프론트엔드 (Frontend)
 
-(예정: HTML, CSS, JavaScript 등)
+- [[explorations/browser-cache-clearing]] — 브라우저 캐시 초기화 (Chrome·Edge 단축키, 강제 새로고침, DevTools 캐시 비활성화)
 
 ## 소스 문서 (Sources)
 
