@@ -17,7 +17,37 @@ export const sharedPageComponents: SharedLayout = {
 // 좌측 탐색기 메뉴: 제목은 각 페이지의 frontmatter title을 따르되,
 // 한글 12글자(반각 24자)를 넘어 메뉴가 2줄로 wrapping되는 제목만 짧게 줄여 매핑.
 // 새 페이지 추가 시 제목이 길면 이 목록에도 항목을 추가할 것.
+// 폴더 정렬: folderOrder에 있는 폴더를 이 순서대로, 없는 폴더와 파일은 기존 알파벳순.
+// 새 폴더 추가 시 우선순위를 주려면 folderOrder에 슬러그 세그먼트를 추가할 것.
+// (sortFn은 브라우저에서 문자열로 실행되므로 외부 변수를 참조하면 안 됨)
 const explorer = Component.Explorer({
+  sortFn: (a, b) => {
+    const folderOrder = [
+      "java",
+      "database",
+      "ide",
+      "devops",
+      "windows",
+      "security",
+      "algorithm",
+    ];
+    if (a.isFolder && b.isFolder) {
+      const ai = folderOrder.indexOf(a.slugSegment);
+      const bi = folderOrder.indexOf(b.slugSegment);
+      if (ai !== -1 && bi !== -1) return ai - bi;
+    }
+    if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
+      return a.displayName.localeCompare(b.displayName, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
+    }
+    if (!a.isFolder && b.isFolder) {
+      return 1;
+    } else {
+      return -1;
+    }
+  },
   mapFn: (node) => {
     const displayNames: Record<string, string> = {
       "concepts/algorithm/coding-test-language-basics": "코딩테스트 기본 문법",
