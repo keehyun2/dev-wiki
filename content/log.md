@@ -245,3 +245,10 @@
 - **파일**: content/explorations/browser-cache-clearing.md
 - **내용**: 브라우저 캐시 초기화 정리 (Chrome·Edge 공통) — 단축키 표(F5/Ctrl+Shift+R/Ctrl+Shift+Del/F12/Ctrl+Shift+N), 강제 새로고침과 Empty Cache and Hard Reload, 설정에서 전체 삭제(쿠키 주의), DevTools 활용(Disable cache, 명령 팔레트, Clear site data), 상황별 방법 선택 표
 - **업데이트**: index.md 프론트엔드 섹션에 항목 추가(첫 번째 프론트엔드 페이지)
+
+## [2026-11-06 10:06:33] create | Created concept page: java-exceptions
+
+- **파일**: content/concepts/java/java-exceptions.md
+- **내용**: Java 주요 예외 정리 — 예외 계층 구조(Throwable/Error/Exception), Checked vs Unchecked 비교표, 자주 만나는 RuntimeException 11종(NPE, NumberFormatException, ConcurrentModificationException 등 예방 코드 포함), Checked Exception 7종(try-with-resources), JSON 파싱 예외 라이브러리별 비교(gson JsonParseException/Jackson JsonProcessingException/org.json JSONException/RestTemplate), 예외 처리 베스트 프랙티스 6가지
+- **링크**: java-json-parsing, java-nio-file-operations, java-debugging, java-8-stream-map과 상호 wikilink
+- **업데이트**: index.md Java 섹션에 항목 추가

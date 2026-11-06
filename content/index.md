@@ -39,6 +39,7 @@ title: dev-wiki
 - [[concepts/java/java-generics]] — Java 제네릭 (타입 한정, PECS 와일드카드, 타입 소거 제약)
 - [[concepts/java/java-ehcache]] — Java Ehcache 가이드 (기본 사용, 리소스 풀, 만료 정책, 캐싱 전략)
 - [[concepts/java/java-json-parsing]] — Java JSON 파싱 (gson + commons-io, RestTemplate)
+- [[concepts/java/java-exceptions]] — Java 주요 예외 정리 (Checked/Unchecked, RuntimeException 계열, JSON 파싱 예외, 처리 베스트 프랙티스)
 - [[concepts/java/redis-java-client]] — Redis와 Java 클라이언트 (설치, Jedis, Redisson)
 
 ## IDE 도구 (IDE)
