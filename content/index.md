@@ -29,6 +29,7 @@ title: dev-wiki
 - [[summaries/database/oracle-sql]] — Oracle SQL 필수 문법 (MERGE, WITH, 분석 함수, 날짜)
 - [[summaries/database/mysql-query-log]] — MySQL 쿼리 로그 설정 및 관리 (general log, crontab 로테이션)
 - [[concepts/database/oracle-19c-time-format]] — Oracle 19c 시간 포맷팅 (HHMISS, 시간 추출, 변환)
+- [[concepts/database/sql-for-update]] — SELECT FOR UPDATE 행 잠금 (경쟁 조건 방지, NOWAIT/WAIT/SKIP LOCKED, DBMS별 차이, 데드락)
 - [[explorations/oracle-nls-territory-date-conversion]] — Oracle NLS_TERRITORY 날짜 암묵 형변환 오류 (한국 정상·베트남 오류, 재현·원인·예방)
 
 ## Java

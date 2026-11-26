@@ -121,3 +121,4 @@ WHERE rn <= 10;
 ## 관련 페이지
 
 - [[sources/developers-cheatsheet.md]] - 전체 개발자 치트시트
+- [[concepts/database/sql-for-update]] - SELECT FOR UPDATE 행 잠금 (행 락, 대기 옵션, DBMS별 차이)

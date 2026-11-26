@@ -252,3 +252,10 @@
 - **내용**: Java 주요 예외 정리 — 예외 계층 구조(Throwable/Error/Exception), Checked vs Unchecked 비교표, 자주 만나는 RuntimeException 11종(NPE, NumberFormatException, ConcurrentModificationException 등 예방 코드 포함), Checked Exception 7종(try-with-resources), JSON 파싱 예외 라이브러리별 비교(gson JsonParseException/Jackson JsonProcessingException/org.json JSONException/RestTemplate), 예외 처리 베스트 프랙티스 6가지
 - **링크**: java-json-parsing, java-nio-file-operations, java-debugging, java-8-stream-map과 상호 wikilink
 - **업데이트**: index.md Java 섹션에 항목 추가
+
+## [2026-11-26 11:30:38] create | Created concept page: sql-for-update
+
+- **파일**: content/concepts/database/sql-for-update.md
+- **내용**: SELECT ... FOR UPDATE 정리 — Lost Update 경쟁 조건 예시, 기본 사용법, 핵심 동작(트랜잭션 종료까지 잠금 유지, 일반 SELECT는 비차단, 최신 커밋 값 읽기), 대기 옵션(NOWAIT/WAIT n/SKIP LOCKED), 조인과 OF 절, DBMS별 차이표(Oracle/MySQL 8.0/PostgreSQL 문법·오류 코드), DBMS별 주의점(Oracle Full Table Scan 전체 잠금·커서 루프 내 COMMIT 시 ORA-01002, InnoDB 인덱스·갭 락·대기 초과 시 문장만 롤백, PostgreSQL lock_timeout), 데드락 예방, FOR UPDATE 없이 해결하는 방법(조건부 UPDATE·낙관적 잠금), Spring @Transactional 사용 시 주의점
+- **검증**: Oracle 19c SQL Language Reference, MySQL 8.0/8.4 Reference Manual, PostgreSQL 문서, MariaDB 10.6.0 릴리스 노트와 대조 — MySQL에는 WAIT n이 없다는 점 확인
+- **업데이트**: index.md 데이터베이스 섹션에 항목 추가, oracle-sql.md 관련 페이지에 링크 추가
