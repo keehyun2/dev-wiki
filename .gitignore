@@ -20,5 +20,8 @@ Thumbs.db
 public/
 .quartz-cache/
 
+# mdbook build output
+mdbook/book/
+
 # Local Netlify folder
 .netlify
